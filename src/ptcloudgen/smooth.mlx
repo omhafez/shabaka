@@ -1,0 +1,24 @@
+<!DOCTYPE FilterScript>
+<FilterScript>
+
+ <filter name="MLS projection (APSS)">
+  <Param type="RichMesh" value="0" name="ControlMesh"/>
+  <Param type="RichMesh" value="0" name="ProxyMesh"/>
+  <Param type="RichBool" value="false" name="SelectionOnly"/>
+  <Param type="RichFloat" value="2" name="FilterScale"/>
+  <Param type="RichFloat" value="0.0001" name="ProjectionAccuracy"/>
+  <Param type="RichInt" value="15" name="MaxProjectionIters"/>
+  <Param type="RichFloat" value="1" name="SphericalParameter"/>
+  <Param type="RichBool" value="true" name="AccurateNormal"/>
+  <Param type="RichInt" value="0" name="MaxSubdivisions"/>
+  <Param type="RichFloat" value="2" name="ThAngleInDegree"/>
+ </filter>
+
+ <filter name="Smooths normals on a point sets">
+  <Param type="RichInt" value="10" name="K"/>
+  <Param type="RichBool" value="false" name="useDist"/>
+ </filter>
+
+ <filter name="Normalize Vertex Normals"/>
+
+</FilterScript>

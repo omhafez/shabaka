@@ -1,0 +1,87 @@
+
+==============================================================================
+PMESHGEN
+Wrapper for Celeris Polyhedral Meshing Tool
+==============================================================================
+
+by Omar Hafez, Mark Rashid
+University of California, Davis
+
+https://www.linkedin.com/in/omarhafez34
+omhafez@ucdavis.edu
+
+Pmeshgen takes a Stanford PLY file, converts to a single polyhedron in SMFE
+format, and generates a polyhedral mesh for Celeris
+
+-------------------------------------------------------------------------
+Setup
+-------------------------------------------------------------------------
+shabaka_dir=~/projects/shabaka;
+echo 'export shabaka_dir='$shabaka_dir';' >> ~/.bashrc
+echo 'alias pmeshgen="python $shabaka_dir/src/pmeshgen/pmeshgen.py"' >> ~/.bashrc
+echo 'export pmshgn="python $shabaka_dir/src/pmeshgen/pmeshgen.py"' >> ~/.bashrc
+make -C $shabaka_dir/src/pmeshgen/ply2smfe/
+source ~/.bashrc
+
+cd into shabaka/reslt and cd into an existing directory (or make a new one)
+Ensure that a .ply surface mesh is in the current directory
+
+-------------------------------------------------------------------------
+Usage
+-------------------------------------------------------------------------
+- TO CALL:
+pmeshgen file.ply [options]
+where file.ply is a surface mesh/b-rep in PLY format
+
+for example, call:
+pmeshgen sphere.ply -s2.0 -t0.0000001
+
+- OPTIONS:   
+* -sXXX: hex mesh spacing  
+* -tYYY: tolerance  
+* -v: run in verbose mode  
+
+Options should be separated by a space, and should have no whitespace
+between the flag and value, exactly as shown in the example call.  
+
+- DEFAULT FLAGS:  
+* -s2.0 (hex mesh spacing of 2.0)
+* -t0.0000001 (tolerance of 0.0000001)
+* verbose mode: off
+
+
+- OUTPUT FILES:
+file-celeris - directory containing Celeris database
+
+
+- NOTES:
+~ It is assumed that the calls to pmeshgen.py are correct. Error handling is
+  not fully developed. If values are provided that are not necessary for the
+  particular run, they will be ignored.
+
+~ If pmeshgen step takes more than 5 minutes, it is likely hanging. Attempt the
+  following changes:
+    1. adjust the tolerance value
+    2. adjust the number of surface points in Shabaka
+    3. if doing Voronoi reconstruction, fiddle with the vsitedist value in
+       Shabaka (changes on the order of 0.1 may be sufficient)
+    4. if meshing a smooth object, you may run the problem in Shabaka with the
+       -s option for a smooth point cloud. That is, make the following call:
+       shabaka file.nrrd -x01 -nXXX -dYYY -s
+       where XXX and YYY are potentially different values than used previously
+       Followed by: pmeshgen file.ply ZZZ 
+       where ZZZ is a potentially different spacing than used previously
+
+~ Always confirm that output files have been updated following a run
+
+-------------------------------------------------------------------------
+Visualization:
+-------------------------------------------------------------------------
+CALL: celeris (opens up GUI)
+General Panel --> Celeris Database --> Load
+Select file_celeris directory and load file_data.cdb
+Select all meshes and load
+
+==============================================================================
+** END OF PMESHGEN-USAGE DOC **
+

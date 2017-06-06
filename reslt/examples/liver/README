@@ -1,0 +1,5 @@
+CT and segmented data from LiTS - Liver Tumor Segmentation Challenge (https://competitions.codalab.org/competitions/15595)
+
+---
+
+CALL: shabaka liver.nrrd -t -b -k

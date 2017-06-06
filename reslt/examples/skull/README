@@ -1,0 +1,6 @@
+CT data from the Cancer Imaging Archive (http://www.cancerimagingarchive.net/)
+
+---
+
+CALL: shabaka skull.nrrd -n60000 -s -t -b -k
+

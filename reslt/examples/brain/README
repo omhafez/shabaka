@@ -1,0 +1,8 @@
+MRI data and image masks from www.oasis-brains.org. The image mask includes both white and gray matter as one mask.
+
+http://www.oasis-brains.org/pdf/oasis_jcogneuro.pdf
+Marcus, DS, Wang, TH, Parker, J, Csernansky, JG, Morris, JC, Buckner, RL. Open Access Series of Imaging Studies (OASIS): Cross-Sectional MRI Data in Young, Middle Aged, Nondemented, and Demented Older Adults. Journal of Cognitive Neuroscience, 19, 1498-1507.
+
+---
+
+CALL: shabaka brain.nrrd -n60000 -p -s -t -k -b

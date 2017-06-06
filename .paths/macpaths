@@ -1,0 +1,20 @@
+
+# ADDED BY SHABAKA
+
+export shabaka_dir=$shabaka_dir
+
+export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/libexec:$LD_LIBRARY_PATH
+export PATH=$shabaka_dir/src/external/ACVD/bin:$PATH  
+export PATH=/Applications/meshlab.app/Contents/MacOS:$PATH
+export mshlbsrvr="meshlabserver"
+export PATH=/Applications/Paraview-5.3.0.app/Contents/MacOS:$PATH
+export PATH=/Applications/Paraview-5.3.0.app/Contents/bin:$PATH
+alias Seg3D2=/Applications/Seg3D2.app/Contents/MacOS/Seg3D2
+
+alias shabaka="python $shabaka_dir/src/shabaka.py"
+export shbk="python $shabaka_dir/src/shabaka.py"
+alias pmeshgen="python $shabaka_dir/src/pmeshgen/pmeshgen.py"
+export pmshgn="python $shabaka_dir/src/pmeshgen/pmeshgen.py"
+
+# END SHABAKA PATHS
+

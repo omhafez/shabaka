@@ -1,0 +1,95 @@
+### TO CALL:
+`
+shabaka mask.nrrd [options]
+`  
+where *mask.nrrd* is an image segmentation (mask) provided by the user.  
+
+#### Options:   
+* -nXXX: specify desired surface points following surface
+      reconstruction step, denoted here as XXX. The number of surface points
+      should typically be on the order of 25000.  
+* -dYYY: specify Voronoi site pair distance (for Voronoi-based surface
+      reconstruction), denoted here as YYY. Typically not to be changed.  
+* -tZZZ: call tetgen to produce tetrahedral volume mesh from surface generated
+      by Shabaka. The string ZZZ is the set of tetgen options (Refer to 
+      http://wias-berlin.de/software/tetgen). If ZZZ is not specified,
+      default tetgen options are -pqY  
+* -k: output tetrahedral volume mesh in VTK format. Requires -t flag to be
+      called as well  
+* -b: output tetrahedral volume mesh in Abaqus .inp format. Requires -t flag
+      to be called as well  
+* -l: (lowercase L) generate linear tetrahedra (default is quadratic). 
+      Requires -t flag to be called as well  
+* -v: run Shabaka in verbose mode  
+* -a: export all intermediate files  
+* -s: perform smoothing on point cloud (should not typically be necessary)  
+* -p: perform Screened Poisson surface reconstruction instead of default
+      Voronoi-based surface reconstruction  
+* -f: overwrite any previously existing Shabaka output files        
+
+Options should be separated by a space, and should have no whitespace
+between the flag and value, exactly as shown in the example call.  
+
+#### RECOMMENDED CALL:  
+`
+shabaka mask.nrrd -n30000 -d1.1 -tpqY -k -b
+`  
+Generates 30,000 surface points, uses Voronoi site pair distance of 1.1,
+and generates quadratic tetrahedra in Tetgen, VTK, and Abaqus formats.
+Tetgen options are -pqY.
+
+#### Other examples: 
+`
+shabaka mask.nrrd
+`  
+(Default) Generates 30,000 surface points and uses Voronoi site pair distance
+of 1.1. No tetrahedral meshing, verbose mode off, no intermediate files
+exported, point cloud smoothing off, and Voronoi-based surface reconstruction
+performed.
+  
+`
+shabaka mask.nrrd -s -v -l -t -k
+`  
+Generates 30,000 surface points, uses Voronoi site pair distance of 1.1,
+smooths point cloud, verbose mode on, generates linear tetrahedra in
+Tetgen and VTK formats. Tetgen options are -pqY.
+  
+`
+shabaka mask.nrrd -n25000 -p -a -f
+`  
+Generates 25,000 surface points, performs Screened Poisson surface
+reconstruction, and exports all intermediate files. Overwrites previously
+existing Shabaka output files.
+  
+  
+### WALL CLOCK TIME:
+Surface meshes can be generated for the provided datasets in less than 5
+minutes on a 4 x 2.4 GHz CPU. Images involving complex interfaces or in-plane
+resolutions higher than 256 x 256 pixels may take slightly more time.  
+
+
+### OUTPUT:  
+###### The following are output upon calling Shabaka:  
+* .ply - watertight b-rep in Stanford PLY format  
+* .stl - same file in STL format  
+
+###### If -t is flag included, additionally:  
+* -tetgen - subdirectory that includes all tetgen output files  
+
+###### If -k is flag included, additionally:
+* .vtk - tetrahedral mesh in legacy VTK format
+
+###### If -b is flag included, additionally:
+* .inp - tetrahedral mesh in Abaqus .inp format
+
+###### If -a is flag included, additionally:  
+* -ptcloud.ply - point cloud used for surface reconstruction, in PLY
+  format  
+* .xyz - Voronoi sites in XYZ format  
+* .vor - Voronoi partition output from Qhull  
+* -fine.ply - triangulated b-rep prior to surface decimation in PLY
+  format  
+  
+Results may be inspected in Meshlab and/or Paraview. They can be opened from
+the Start menu, or alternatively, if using Mac or Linux, by opening a terminal
+and typing `meshlab` to open Meshlab and `paraview` to open Paraview.

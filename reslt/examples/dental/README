@@ -1,0 +1,6 @@
+Clinical cone beam CT data from San Diego VA Hospital
+
+---
+
+CALL: shabaka [tooth.nrrd] -t -b -k
+

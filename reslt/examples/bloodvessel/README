@@ -1,0 +1,6 @@
+MRI data and image mask from Simpleware examples (www.simpleware.com)
+
+---
+
+CALL: shabaka bloodvessel.nrrd -t -b -k
+

@@ -1,0 +1,6 @@
+CT data from Materialise Mimics. http://www.materialise.com/en/home
+
+---
+
+CALL: shabaka femur.nrrd -n20000 -s -b -t -k 
+

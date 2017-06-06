@@ -1,0 +1,24 @@
+
+# ADDED BY SHABAKA
+
+export DISPLAY=:0
+export shabaka_dir=$shabaka_dir
+
+export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/lib64:/usr/local/lib32:/usr/local/libexec:$LD_LIBRARY_PATH
+
+export PATH=$shabaka_dir/src/external/qhull-2015.2/bin:$PATH
+export LD_LIBRARY_PATH=$shabaka_dir/src/external/qhull-2015.2/lib:$LD_LIBRARY_PATH
+export PATH=$shabaka_dir/src/external/ACVD/bin:$PATH
+alias meshlabserver="meshlabserver"
+export mshlbsrvr="meshlabserver"
+export PATH=$shabaka_dir/src/external/ParaView-4.0.1-Linux-64bit/bin:$PATH
+export LD_LIBRARY_PATH=$shabaka_dir/src/external/ParaView-4.0.1-Linux-64bit/lib:$LD_LIBRARY_PATH
+export PATH=$shabaka_dir/src/external/gmsh-3.0.1-Linux/bin/:$PATH
+
+alias shabaka="python $shabaka_dir/src/shabaka.py"
+export shbk="python $shabaka_dir/src/shabaka.py"
+alias pmeshgen="python $shabaka_dir/src/pmeshgen/pmeshgen.py"
+export pmshgn="python $shabaka_dir/src/pmeshgen/pmeshgen.py"
+
+# END SHABAKA PATHS
+

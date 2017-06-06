@@ -1,0 +1,8 @@
+Ex-vivo hearts from the CardioVascular Research Grid (http://cvrgrid.org/data/ex-vivo)
+
+The scans herein were generated based on standard MRI, i.e., no additional diffusion gradient imposed during image acquisition. They are rotated versions of the DTIMMDDYY_001.nii files that can be found at http://cvrgrid.org/datasets/exVivo/canine/ and http://cvrgrid.org/datasets/exVivo/human. Specifically, for example, the canine/failing/DTI040204/DTI040204-img.nrrd image is a rotated version of DTI040204_001.nii at http://cvrgrid.org/datasets/exVivo/canine/failing/DTI040204/RawData/NIFTIdwi/
+
+---
+
+CALL: shabaka [heart.nrrd] -ta1.0pqY -b -k
+

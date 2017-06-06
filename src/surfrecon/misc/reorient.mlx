@@ -1,0 +1,8 @@
+<!DOCTYPE FilterScript>
+
+<FilterScript>
+
+ <filter name="Remove Faces from Non Manifold Edges"/>
+ <filter name="Re-Orient all faces coherentely"/>
+ 
+</FilterScript>

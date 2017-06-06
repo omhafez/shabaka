@@ -1,0 +1,9 @@
+<!DOCTYPE FilterScript>
+<FilterScript>
+ <filter name="Taubin Smooth">
+  <Param tooltip="The lambda parameter of the Taubin Smoothing algorithm" description="Lambda" type="RichFloat" value="0.5" name="lambda"/>
+  <Param tooltip="The mu parameter of the Taubin Smoothing algorithm" description="mu" type="RichFloat" value="-0.53" name="mu"/>
+  <Param tooltip="The number of times that the taubin smoothing is iterated. Usually it requires a larger number of iteration than the classical laplacian" description="Smoothing steps" type="RichInt" value="10" name="stepSmoothNum"/>
+  <Param tooltip="If checked the filter is performed only on the selected faces" description="Affect only selected faces" type="RichBool" value="false" name="Selected"/>
+ </filter>
+</FilterScript>

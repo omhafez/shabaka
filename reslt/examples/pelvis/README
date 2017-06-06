@@ -1,0 +1,8 @@
+“The dataset used in this project was downloaded from iDASH repository (https://idash-data.ucsd.edu) supported by the National Institutes of Health through the NIH Roadmap for Medical Research, Grant U54HL108460. The original source of the data can be found at http://cancerimagingarchive.net.“
+
+Persistent URL: http://dx.doi.org/10.15147/J2CC7V
+
+---
+
+CALL: shabaka pelvis.nrrd -s -n50000 -t -b -k
+

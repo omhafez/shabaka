@@ -1,0 +1,5 @@
+Downsampled microCT data and segmented image from Sarah Shaffer at Sue Stover's Lab (http://www.vetmed.ucdavis.edu/vorl/team/)
+
+---
+
+CALL: shabaka proxsesamoid.nrrd -n10000 -t -b -k

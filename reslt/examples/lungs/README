@@ -1,0 +1,6 @@
+CT data and image mask provided by LUNA 2016 Grand Challenge
+https://luna16.grand-challenge.org
+
+---
+
+CALL: shabaka lungs.nrrd -t -b -k

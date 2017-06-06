@@ -1,0 +1,38 @@
+# Note: Make the geometric tolerance as small as possible to avoid any
+#       unwanted merger in the mesh.  Since this workaround is based on
+#       the assumption that ALL IMPORTs use the same set of points,
+#       there should be no possibility of a proximity among different
+#       points unless the tolerance is larger than some features of the
+#       imported meshes.
+
+DEFINE DELETE_SCULPT_POLYHEDRON_MESH_INPUT FALSE
+
+#=======================================================================
+# set world box bounds to get the best "first impression".
+
+DEFINE WORLD_BND_BOX [0.0, 0.0, 0.0], [150.0, 150.0, 150.0]
+
+#=======================================================================
+
+IMPORT SMFE PM FROM "./vorbrep.m" 0.0000001 RGN_1
+
+#=======================================================================
+
+MESH_BREP = BOUNDARY OF PM
+
+#=======================================================================
+
+CREATE HEX_MESH MESH_HEX [2.0,2.0,2.0], 0.0000001, MESH_BREP
+
+MESH = MESH_BREP SCULPT MESH_HEX
+
+CREATE PHYS_MESH MESH_PHYS MESH
+
+#=======================================================================
+
+OPEN NEW CELERIS_DB VOR_DB "./vor_db/vor_data.cdb" OVERWRITE
+
+SAVE {MESH_HEX, MESH_BREP, MESH, MESH_PHYS} TO VOR_DB
+
+CLOSE CELERIS_DB VOR_DB
+

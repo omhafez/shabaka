@@ -1,0 +1,9 @@
+CT data and image mask from http://spineweb.digitalimaginggroup.ca/
+
+Jianhua Yao, Joseph E. Burns, Daniel Forsberg, Alexander Seitel, Abtin Rasoulian, Purang Abolmaesumi, Kerstin Hammernik, Martin Urschler, Bulat Ibragimov, Robert Korez, Tomaž Vrtovec, Isaac Castro-Mateos, Jose M. Pozo, Alejandro F. Frangi, Ronald M. Summers, Shuo Li, A Multi-center Milestone Study of Clinical Vertebral CT Segmentation, accepted for publication in Computerized Medical Imaging and Graphics, 2016.
+
+Image mask includes L5 vertebra only
+
+---
+
+CALL: shabaka lumbar.nrrd -n15000 -t -b -k

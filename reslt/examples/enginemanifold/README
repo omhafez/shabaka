@@ -1,0 +1,5 @@
+CT scan from Simpleware examples (www.simpleware.com)
+
+---
+
+CALL: shabaka enginemanifold.nrrd -n50000 -t -b -k
