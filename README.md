@@ -378,7 +378,9 @@ and typing `meshlab` to open Meshlab and `paraview` to open Paraview.
 - If you need to exit the code prematurely, you may need to type ctrl-c
   several times. Alternatively, type ctrl-z or close the terminal.  
 
-- Always make a new directory for each run.
+- Always make a new directory for each mesh you want to make. If you are
+  generating several meshes for the same input data, just link to the same
+  input file.
 
 - Ignore warnings and errors you may encounter when running in verbose mode,
   particularly from Meshlab.  
