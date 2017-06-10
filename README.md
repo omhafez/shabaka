@@ -369,11 +369,11 @@ and typing `meshlab` to open Meshlab and `paraview` to open Paraview.
 
 - A suite of example segmented images have been provided. If you would also
   like the corresponding raw image data (~1.25 GB), make the following calls:
-~~~~
+   ~~~~
    wget https://github.com/omhafez/shabaka-examples/releases/download/v1.0/shabaka-examples.tgz
    tar -xf shabaka-examples.tgz -C $shabaka_dir/reslt
    rm -rf shabaka-examples.tgz
-~~~~
+   ~~~~
 
 - If you need to exit the code prematurely, you may need to type ctrl-c
   several times. Alternatively, type ctrl-z or close the terminal.  
