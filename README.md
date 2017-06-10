@@ -40,29 +40,29 @@ included below.
 
 ‣ Type Command(⌘)+Space bar to open Spotlight Search, type Terminal, and hit
 return. Make the following call in terminal:  
-   ~~~~
-   xcode-select --install
-   ~~~~
+~~~~
+xcode-select --install
+~~~~
 If you get an error saying command line tools are already installed, just move
 on to the next step. Otherwise, click Install, then Agree.  
   
 ‣ Make the following three calls in the terminal to install Homebrew and git:  
-   ~~~~
-   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-   brew update && brew upgrade
-   brew install git
-   ~~~~
+~~~~
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew update && brew upgrade
+brew install git
+~~~~
   
 ‣ Let's assume you want Shabaka in your home directory. Make the following
 calls in the terminal (ignore warnings):  
-   ~~~~
-   cd $HOME
-   git clone https://github.com/omhafez/shabaka.git
-   cd shabaka
-   echo 'export shabaka_dir='$PWD >> ~/.bash_profile
-   cat .paths/macpaths >> ~/.bash_profile && source ~/.bash_profile
-   sudo ./build.sh
-   ~~~~
+~~~~
+cd $HOME
+git clone https://github.com/omhafez/shabaka.git
+cd shabaka
+echo 'export shabaka_dir='$PWD >> ~/.bash_profile
+cat .paths/macpaths >> ~/.bash_profile && source ~/.bash_profile
+sudo ./build.sh
+~~~~
 If Homebrew gives any installation errors, just follow the instructions they
 provide to resolve the issue and run                                          `
 sudo ./build.sh                                                               `
@@ -79,26 +79,26 @@ Please email omhafez@ucdavis.edu for help.
 ### INSTRUCTIONS FOR UBUNTU *(15 minutes)*
 
 ‣ Open a terminal and make the following call to install git:  
-   ~~~~
-   sudo apt-get -y install git
-   ~~~~
+~~~~
+sudo apt-get -y install git
+~~~~
 
 ‣ Let's assume you want Shabaka in your home directory. Make the following
 calls in the terminal (ignore warnings):  
-   ~~~~
-   cd $HOME
-   git clone https://github.com/omhafez/shabaka.git
-   cd shabaka
-   echo 'export shabaka_dir='$PWD >> ~/.bashrc
-   cat .paths/linuxpaths >> ~/.bashrc && source ~/.bashrc
-   sudo ./build.sh
-   ~~~~
+~~~~
+cd $HOME
+git clone https://github.com/omhafez/shabaka.git
+cd shabaka
+echo 'export shabaka_dir='$PWD >> ~/.bashrc
+cat .paths/linuxpaths >> ~/.bashrc && source ~/.bashrc
+sudo ./build.sh
+~~~~
 ‣ If you come across any errors (particularly from *apt-get*), attempt the
 following calls and try again:
-   ~~~~
-   sudo apt-get -y update && sudo apt-get -y upgrade
-   sudo apt-get -y dist-upgrade && sudo apt-get -f install && sudo apt-get -y autoremove
-   ~~~~
+~~~~
+sudo apt-get -y update && sudo apt-get -y upgrade
+sudo apt-get -y dist-upgrade && sudo apt-get -f install && sudo apt-get -y autoremove
+~~~~
 ‣ The build script installs the external applications Meshlab 2016.12, 
 Paraview 4.0.1, and Seg3D 2.1.4. The calls appending *~/.bashrc*
 make them the default versions of those applications.
@@ -125,28 +125,28 @@ Please make the UNIX username and password match that of your native Windows
 account. Ignore the portion of the article discussing fonts.
   
 ‣ Start the "Bash on Ubuntu on Windows" application. Make the following calls:
-   ~~~~
-   sudo apt-get -y update && sudo apt-get -y upgrade
-   sudo apt-get -y dist-upgrade && sudo apt-get -f install && sudo apt-get -y autoremove
-   ~~~~
+~~~~
+sudo apt-get -y update && sudo apt-get -y upgrade
+sudo apt-get -y dist-upgrade && sudo apt-get -f install && sudo apt-get -y autoremove
+~~~~
   
 ‣ Make the following call to install git:  
-   ~~~~
-   sudo apt-get -y install git
-   ~~~~
+~~~~
+sudo apt-get -y install git
+~~~~
 
 ‣ Let's assume you want Shabaka in your home directory on Windows. A symbolic
 link will be placed in the home directory of the Linux subsystem as well.  
 Make the following calls in the terminal (ignore warnings):  
-   ~~~~
-   cd /mnt/c/Users/$USER
-   git clone https://github.com/omhafez/shabaka.git
-   cd $HOME && ln -sf /mnt/c/Users/$USER/shabaka
-   cd shabaka
-   echo 'export shabaka_dir='$PWD >> ~/.bashrc
-   cat .paths/windowspaths >> ~/.bashrc && source ~/.bashrc
-   sudo ./build.sh
-   ~~~~
+~~~~
+cd /mnt/c/Users/$USER
+git clone https://github.com/omhafez/shabaka.git
+cd $HOME && ln -sf /mnt/c/Users/$USER/shabaka
+cd shabaka
+echo 'export shabaka_dir='$PWD >> ~/.bashrc
+cat .paths/windowspaths >> ~/.bashrc && source ~/.bashrc
+sudo ./build.sh
+~~~~
   
 ‣ Install Windows software with the following steps:
 
