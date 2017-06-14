@@ -132,21 +132,21 @@ else:
    os.system(strcall)
    
 
-   ##call Celeris script file
-   #command = "celeris --batch-mode " + sfile
-   #print callstr + command + ' (~3 minutes)'
-   #print '\rworking...',
-   #sys.stdout.flush()
-   #os.system(command + log)
-   #print "\r                    "
-   #os.system('mv ' + base+'_celeris ' + base+'-celeris')
+   #call Celeris script file
+   command = "celeris --batch-mode " + sfile
+   print callstr + command + ' (~3 minutes)'
+   print '\rworking...',
+   sys.stdout.flush()
+   os.system(command + log)
+   print "\r                    "
+   os.system('mv ' + base+'_celeris ' + base+'-celeris')
    
-   ##remove intermediate files
-   #os.system('rm -rf ply2smfe');
-   #os.system('rm -rf import-smfe.csf');
-   #os.system('rm -rf ' + base + '.m');
-   #os.system("rm -rf import-"+base+"-smfe.csf");
-   #call(["rm", "-f", "log"])
+   #remove intermediate files
+   os.system('rm -rf ply2smfe');
+   os.system('rm -rf import-smfe.csf');
+   os.system('rm -rf ' + base + '.m');
+   os.system("rm -rf import-"+base+"-smfe.csf");
+   call(["rm", "-f", "log"])
 
 
    end = time.time()
