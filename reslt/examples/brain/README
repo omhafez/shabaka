@@ -5,4 +5,4 @@ Marcus, DS, Wang, TH, Parker, J, Csernansky, JG, Morris, JC, Buckner, RL. Open A
 
 ---
 
-CALL: shabaka brain.nrrd -n60000 -p -s -t -k -b
+CALL: shabaka brain.nrrd -n60000 -p -t -k -b
