@@ -114,15 +114,18 @@ Linux.
 Please email omhafez@ucdavis.edu for help.  
 
   
-### INSTRUCTIONS FOR WINDOWS *(1 hour)*
+### INSTRUCTIONS FOR WINDOWS *(30 minutes)*
 
-‣ Go to the following link to update your version of Windows 10 to the
-Creators Update: https://www.microsoft.com/en-us/software-download/windows10  
+‣ Click the Start menu and search "About your PC". Ensure that you are running
+Windows 10, Version 1703, OS build 15063 (or newer). If you are not, go to
+the following link to update your version of Windows 10 to the Creators
+Update (allocate an additional 30 minutes for this task):
+https://www.microsoft.com/en-us/software-download/windows10  
   
 ‣ Follow these instructions to get Linux Bash Shell on Windows:  
 https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/  
 Please make the UNIX username and password match that of your native Windows
-account. Ignore the portion of the article discussing fonts.
+account. Ignore the portion of the article that discusses fonts.
   
 ‣ Start the "Bash on Ubuntu on Windows" application. Make the following calls:
 ~~~~
