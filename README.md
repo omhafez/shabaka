@@ -72,7 +72,7 @@ again.
 Paraview 5.3.0, and Seg3D 2.3.2. The calls appending *~/.bash_profile*
 make them the default versions of those applications.  
   
-‣ If you have any issues installing, they are certain to have quick solutions.
+‣ If you have any issues installing, they are certain to be minor.
 Please email omhafez@ucdavis.edu for help.  
 
   
@@ -107,10 +107,10 @@ make them the default versions of those applications.
 but can be built from source from the following link:
 https://github.com/SCIInstitute/Seg3D/releases/tag/v2.3.2
 If you (understandably) don't want to build Seg3D from source, you may use
-Slicer (http://slicer.org) instead, which provides prebuild executables for
+Slicer (http://slicer.org) instead, which provides prebuilt executables for
 Linux.
   
-‣ If you have any issues installing, they are certain to have quick solutions.
+‣ If you have any issues installing, they are certain to be minor.
 Please email omhafez@ucdavis.edu for help.  
 
   
@@ -177,7 +177,7 @@ sudo ./build.sh
 Paraview 4.0.1 in the Linux subsystem. The calls appending *~/.bashrc*
 make them the default versions within the subsystem.  
   
-‣ If you have any issues installing, they are certain to have quick solutions.
+‣ If you have any issues installing, they are certain to be minor.
 Please email omhafez@ucdavis.edu for help.  
   
 ------------------------------------------------------------------------------
