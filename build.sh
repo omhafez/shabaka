@@ -235,8 +235,11 @@ elif [ $UNAME_S == "Linux" ]; then
       ## UBUNTU
       
       # MESHLAB 2016.12
-      sudo apt-get -y install snapd
-      sudo snap install meshlab
+      sudo add-apt-repository -y ppa:zarquon42/meshlab
+      sudo apt-get update
+      sudo apt-get install meshlab
+#       sudo apt-get -y install snapd
+#       sudo snap install meshlab
    
       # SEG3D 2.1.4
       if [ $MYVERSION == "14.04" ]; then
