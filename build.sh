@@ -236,8 +236,8 @@ elif [ $UNAME_S == "Linux" ]; then
       
       # MESHLAB 2016.12
       sudo add-apt-repository -y ppa:zarquon42/meshlab
-      sudo apt-get update
-      sudo apt-get install meshlab
+      sudo apt-get -y update
+      sudo apt-get -y install meshlab
 #       sudo apt-get -y install snapd
 #       sudo snap install meshlab
    
