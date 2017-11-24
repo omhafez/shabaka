@@ -236,7 +236,7 @@ where *mask.nrrd* is an image segmentation (mask) provided by the user.
 * -a: export all intermediate files  
 * -s: perform smoothing on point cloud (should not typically be necessary)  
 * -p: perform Screened Poisson surface reconstruction instead of default
-      Voronoi-based surface reconstruction *(currently only available on Mac,  
+      Voronoi-based surface reconstruction *(currently only available on Mac, 
       pending bug fixes in Meshlab)*  
 * -f: overwrite any previously existing Shabaka output files  
 
