@@ -144,8 +144,8 @@ sudo apt-get -y install git
 ~~~~
 
 ‣ Let's assume you want Shabaka in your home directory on Windows. A symbolic
-link will be placed in the home directory of the Linux subsystem as well.  
-Make the following calls in the terminal (ignore warnings):  
+link will be placed in the home directory of the Linux subsystem as well. Make the 
+following calls in the terminal (ignore warnings):  
 ~~~~
 cd /mnt/c/Users/$USER
 git clone https://github.com/omhafez/shabaka.git
