@@ -127,7 +127,12 @@ https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-
 Please make the UNIX username and password match that of your native Windows
 account. Ignore the portion of the article that discusses fonts.
   
-‣ Start the "Bash on Ubuntu on Windows" application. Make the following calls:
+‣ Start the "Bash on Ubuntu on Windows" application. Make the following call:
+~~~
+sudo rm /etc/hosts
+~~~
+
+‣ Close the "Bash on Ubuntu on Windows" application and reopen it. Make the following calls:  
 ~~~~
 sudo apt-get -y update && sudo apt-get -y upgrade
 sudo apt-get -y dist-upgrade && sudo apt-get -f install && sudo apt-get -y autoremove
