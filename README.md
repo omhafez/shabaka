@@ -156,7 +156,7 @@ cat .paths/windowspaths >> ~/.bashrc && source ~/.bashrc
 sudo ./build.sh
 ~~~~
   
-‣ Install Windows software with the following steps:
+‣ Finish Windows build with the following steps:
 
 * Open File Explorer by typing Windows + E  
 * Copy the following into the file path:                                      `
