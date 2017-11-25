@@ -166,7 +166,7 @@ sudo ./build.sh
   installation options as is.  
 * Install Xming as administrator. Leave default installation options as
   is.
-* **Launch Xming.**  
+* **Launch Xming**  
 * Type Windows --> search for Xming --> right click --> Open file location  
 * Copy the Xming shortcut  
 * Open the Run window by typing Windows + R, and run the following:          `
