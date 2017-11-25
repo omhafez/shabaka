@@ -170,7 +170,7 @@ sudo ./build.sh
 * Copy the Xming shortcut  
 * Open the Run window by typing Windows + R, and run the following:          `
   shell:common startup                                                       `
-* Paste the Xming shortcut this location
+* Paste the Xming shortcut to this location
 
 ‣ Make a desktop shortcut with the following steps:
 
