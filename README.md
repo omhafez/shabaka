@@ -22,8 +22,8 @@ install and use. Little to no prior knowledge of Unix is required. Meshes are
 generated in a matter of minutes, making it ideal for processing large
 datasets of segmented images.  
 
-"Shabaka" means *mesh* in Arabic, and is the name of a black Egyptian
-pharaoh who ruled in the 8th century BC.  
+"Shabaka" means *mesh* in Arabic, and is the name of a black pharaoh who
+ruled Egypt in the 8th century BC.  
 
 ------------------------------------------------------------------------------
 
