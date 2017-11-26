@@ -30,10 +30,10 @@ pharaoh who ruled in the 8th century BC.
 ## **INSTALLATION**  
 
 Installation requires an internet connection. The code has been tested on MacOS
-Sierra 10.12.4, Ubuntu 14.04.5, Ubuntu 16.04.2, and Windows 10 Creators Update
-(OS build 15063) on 64-bit systems. It is recommended that you upgrade your
-system appropriately. Instructions for updating your Windows system is
-included below.  
+Sierra 10.12.4, Mac OS High Sierra 10.13.1, Ubuntu 14.04.5, Ubuntu 16.04.2, and
+Windows 10 Creators Update (OS build 15063) on 64-bit systems. It is
+recommended that you upgrade your system appropriately. Instructions for
+updating your Windows system is included below.  
 
 
 ### INSTRUCTIONS FOR MAC *(15 minutes)*
