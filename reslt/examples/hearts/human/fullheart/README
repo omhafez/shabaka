@@ -1,1 +1,1 @@
-CALL: shabaka fullheart.nrrd -t -b -k
+CALL: shabaka fullheart.nrrd -n100000 -t -b -k -a -g
