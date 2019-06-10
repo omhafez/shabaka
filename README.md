@@ -46,10 +46,19 @@ xcode-select --install
 If you get an error saying command line tools are already installed, just move
 on to the next step. Otherwise, click Install, then Agree.  
   
-‣ Make the following three calls in the terminal to install Homebrew and git:  
+‣ Make the following call in the terminal to install Homebrew: 
 ~~~~
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+~~~~
+
+‣ Update and upgrade packages in Homebrew:
+~~~~
 brew update && brew upgrade
+brew install python@2
+~~~~
+
+‣ Install git via Homebrew:
+~~~~
 brew install git
 ~~~~
   
@@ -83,7 +92,7 @@ Please email omhafez@ucdavis.edu for help.
 sudo apt-get -y install git
 ~~~~
 
-‣ Let's assume you want Shabaka in your home directory. Make the following
+‣ Assuming you want Shabaka in your home directory, make the following
 calls in the terminal (ignore warnings):  
 ~~~~
 cd $HOME
