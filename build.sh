@@ -51,7 +51,7 @@ if [ $UNAME_S == "Darwin" ]; then
    # CMAKE 3.7.2
    $NOTSUDO brew reinstall cmake  
    
-   # VTK 7.1.0
+   # VTK 8.2.0
    $NOTSUDO brew reinstall vtk
 
    # TEEM 1.11.0

@@ -5,6 +5,7 @@ export shabaka_dir=$shabaka_dir
 
 export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/libexec:$LD_LIBRARY_PATH
 export PATH=$shabaka_dir/src/external/ACVD/bin:$PATH  
+export PATH=$shabaka_dir/src/external/tetgen1.5.1:$PATH
 export PATH=/Applications/meshlab.app/Contents/MacOS:$PATH
 export mshlbsrvr="meshlabserver"
 export PATH=/Applications/Paraview-5.3.0.app/Contents/MacOS:$PATH
