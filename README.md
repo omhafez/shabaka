@@ -58,13 +58,9 @@ You may install the app again after installation from the App Store.
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ~~~~
 
-‣ Update and upgrade packages:
+‣ Update packages and install python and git:
 ~~~~
 brew update && brew upgrade
-~~~~
-
-‣ Install python and git:
-~~~~
 brew install python@2
 brew install git
 ~~~~
