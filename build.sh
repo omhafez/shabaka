@@ -94,16 +94,18 @@ if [ $UNAME_S == "Darwin" ]; then
    $NOTSUDO hdiutil unmount /Volumes/ParaView-5.3.0-Qt5-OpenGL2-MPI-OSX10.8-64bit
    rm -rf ParaView-5.3.0*
 
-   # SEG3D 2.3.2
-   $NOTSUDO wget "https://github.com/omhafez/shabaka-externals/raw/master/mac/Seg3D2-2.3.2-Darwin.dmg"
-   $NOTSUDO hdiutil mount -nobrowse Seg3D2-2.3.2-Darwin.dmg
-   sudo cp -R /Volumes/Seg3D2-2.3.2-Darwin .
-   sudo installer -package Seg3D2-2.3.2-Darwin/Seg3D2-2.3.2-Darwin.pkg -target /
-   $NOTSUDO hdiutil unmount /Volumes/Seg3D2-2.3.2-Darwin
-   sudo rm -rf Seg3D2-2.3.2-Darwin Seg3D2-2.3.2-Darwin.dmg*
+   # SEG3D 2.4.4
+   $NOTSUDO wget "https://github.com/SCIInstitute/Seg3D/releases/download/v2.4.4/Seg3D2-2.4.4-Darwin.pkg"
+   sudo installer -pkg Seg3D2-2.4.4-Darwin.pkg -target /
+   sudo rm -rf Seg3D2-2.4.4-Darwin.pkg
    
    # TETGEN 1.5.0
-   $NOTSUDO brew reinstall tetgen  
+   $NOTSUDO wget "https://github.com/omhafez/shabaka-externals/raw/master/mac/tetgen1.5.1.zip" -O src/external/tetgen1.5.1.zip
+   cd src/external
+   $NOTSUDO unzip tetgen1.5.1.zip
+   $NOTSUDO rm -rf tetgen1.5.1.zip
+   $NOTSUDO make -j4 -C tetgen1.5.1
+   cd -
    
    # GMSH 2.16
    $NOTSUDO brew reinstall gmsh
