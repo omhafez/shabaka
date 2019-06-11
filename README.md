@@ -29,11 +29,10 @@ who ruled in the 8th century BC.
 
 ## **INSTALLATION**  
 
-Installation requires an internet connection. The code has been tested on MacOS
-Sierra 10.12.4, Mac OS High Sierra 10.13.1, Ubuntu 14.04.5, Ubuntu 16.04.2, and
-Windows 10 Creators Update (OS build 15063) on 64-bit systems. It is
-recommended that you upgrade your system appropriately. Instructions for
-updating your Windows system is included below.  
+Installation requires an internet connection. The code has been tested on Mac OS Mojave
+10.14.5, Ubuntu 14.04.5, Ubuntu 16.04.2, and Windows 10 Creators Update (OS build 15063)
+on 64-bit systems. It is recommended that you upgrade your system appropriately.
+Instructions for updating your Windows system is included below.  
 
 
 ### INSTRUCTIONS FOR MAC *(15 minutes)*
@@ -45,24 +44,29 @@ xcode-select --install
 ~~~~
 If you get an error saying command line tools are already installed, just move
 on to the next step. Otherwise, click Install, then Agree.  
-  
-‣ Make the following call in the terminal to install Homebrew: 
+
+‣ Documented issues with developer tools for MacOS Mojave require you to remove /Applications/Xcode.app during installation (click [here](https://github.com/PointCloudLibrary/pcl/issues/2601#issuecomment-486889884) for more details). Remove Xcode with the call below in terminal. You may install the app again after installation from the App Store.
+~~~~
+sudo rm -rf /Applications/Xcode.app
+~~~~
+
+‣ Install Homebrew: 
 ~~~~
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ~~~~
 
-‣ Update and upgrade packages in Homebrew:
+‣ Update and upgrade packages:
 ~~~~
 brew update && brew upgrade
-brew install python@2
 ~~~~
 
-‣ Install git via Homebrew:
+‣ Install python and git:
 ~~~~
+brew install python@2
 brew install git
 ~~~~
   
-‣ Let's assume you want Shabaka in your home directory. Make the following
+‣ Assuming you want Shabaka in your home directory, make the following
 calls in the terminal (ignore warnings):  
 ~~~~
 cd $HOME
@@ -70,6 +74,10 @@ git clone https://github.com/omhafez/shabaka.git
 cd shabaka
 echo 'export shabaka_dir='$PWD >> ~/.bash_profile
 cat .paths/macpaths >> ~/.bash_profile && source ~/.bash_profile
+~~~~
+
+‣ Enter the following call (followed by your Mac password) to run the build script:  
+~~~~
 sudo ./build.sh
 ~~~~
 If Homebrew gives any installation errors, just follow the instructions they
@@ -78,10 +86,10 @@ sudo ./build.sh                                                               `
 again.  
 
 ‣ The build script installs the external applications Meshlab 2016.12, 
-Paraview 5.3.0, and Seg3D 2.3.2. The calls appending *~/.bash_profile*
+Paraview 5.3.0, and Seg3D 2.4.4. The calls appending *~/.bash_profile*
 make them the default versions of those applications.  
   
-‣ If you have any issues installing, they are certain to be minor.
+‣ Any issues installing will be minor.
 Please email omhafez@ucdavis.edu for help.  
 
   
