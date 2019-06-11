@@ -52,14 +52,14 @@ if [ $UNAME_S == "Darwin" ]; then
    $NOTSUDO brew reinstall cmake  
    
    # VTK 7.1.0
-   $NOTSUDO brew tap homebrew/science
-   $NOTSUDO brew reinstall homebrew/science/vtk
+   $NOTSUDO brew tap homebrew/core
+   $NOTSUDO brew reinstall homebrew/core/vtk
 
    # TEEM 1.11.0
    $NOTSUDO brew reinstall teem
 
    # NLOPT 2.4.2
-   $NOTSUDO brew reinstall homebrew/science/nlopt
+   $NOTSUDO brew reinstall homebrew/core/nlopt
 
    # QHULL 2015.2
    $NOTSUDO brew reinstall qhull
