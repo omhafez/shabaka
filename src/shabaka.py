@@ -33,15 +33,15 @@ elif(len(sys.argv) == 2 and str(sys.argv[1]) == '--help'):
    print
 
 else:
-   print "==============================================================================="   
+   print "==============================================================================="
    start = time.time()
-   
+
    infile = str(sys.argv[1])
    sp = infile.split('.');
    base = '.'.join(sp[0:len(sp)-1])
    base = base.split('-ptcloud')[0]
    ext = sp[len(sp)-1]
-   
+
    ## 1. read input parameters
    #set default params
    xval = '11'
@@ -99,7 +99,7 @@ else:
       if (key == '-k'):
          kflag = 1;
       if (key == '-b'):
-         bflag = 1;         
+         bflag = 1;
       if (key == '-v'):
          verbose = 1
       if (key == '-a'):
@@ -117,33 +117,33 @@ else:
             cflag = 1
          else:
             sys.exit('ERROR: duplicate specification of input parameter!')
-            
+
       ArgumentsIndex += 1
-   
+
    if (ext == 'ply'):
       xflag = 1
       xval = '01'
-   
+
    if (verbose == 1):
       log = ''
       log2 = ''
    else:
       log = " > log"
-      log2 = " > log 2>&1"   
-   
-   
+      log2 = " > log 2>&1"
+
+
    ## 2. determine whether to remove previous output files
-   
+
    filelist = [base+'.xyz',           base+'.vor',           base+'-resampled.nrrd',
                base+'-fine.ply',      base+'-init.ply',      base+'-init.vtk',
                base+'-fine.ply',      base+'-fine.vtk',      'smooth_'+base+'.ply',
                base+'-snapsegs.vtk',  base+'-cyclesegs.vtk', base+'-badfcts.vtk',
                base+'-goodfcts.vtk',  base+'.ply',           base+'.stl',
-               base+'.vtk',           base+'.inp',           base+'-tetgen', 
+               base+'.vtk',           base+'.inp',           base+'-tetgen',
                'log',                 'log2']
    if (xval[0] == '1'):
       filelist.extend([base+'-ptcloud.ply'])
-   
+
    proceed = False
    if (fflag == 0 and (any([os.path.exists(f) for f in filelist]))):
       usrinput = raw_input('Old job files exist. Wipe all files and proceed? (y/n): ')
@@ -151,35 +151,35 @@ else:
          proceed = True
    else:
       proceed = True
-   
+
    if (proceed == True):
-      os.system('rm -rf ptcloudgen.py'); os.system('rm -rf connectivity.py'); 
+      os.system('rm -rf ptcloudgen.py'); os.system('rm -rf connectivity.py');
       os.system('rm -rf qvor2vtk'); os.system('rm -rf poissrecon.mlx');
       os.system('rm -rf vorrecon.py'); os.system('rm -rf poissrecon.py');
       os.system('rm -rf smooth.mlx'); os.system('rm -rf reorient.mlx');
       os.system('rm -rf vsitegen'); os.system('rm -rf ptcloudgen.py');
       os.system('rm -rf ptcloudgen'); os.system('rm -rf smooth.mlx');
       os.system('rm -rf clean.py'); os.system('rm -rf taubin.mlx');
-      
+
       if (xval[0] == '1'):
         os.system('rm -rf '+base+'-ptcloud.ply');
-        
+
       os.system('rm -rf '+base+'.xyz');
       os.system('rm -rf '+base+'.vor'); os.system('rm -rf '+base+'-fine.ply');
       os.system('rm -rf '+base+'-init.ply'); os.system('rm -rf '+base+'-init.vtk');
-      os.system('rm -rf '+base+'-fine.ply'); os.system('rm -rf '+base+'-fine.vtk'); 
+      os.system('rm -rf '+base+'-fine.ply'); os.system('rm -rf '+base+'-fine.vtk');
       os.system('rm -rf '+'smooth_'+base+'.ply'); os.system('rm -rf '+base+'-snapsegs.vtk');
       os.system('rm -rf '+base+'-cyclesegs.vtk'); os.system('rm -rf '+base+'-badfcts.vtk');
       os.system('rm -rf '+base+'-goodfcts.vtk');
-      
+
       os.system('rm -rf '+base+'.ply'); os.system('rm -rf '+base+'.stl');
       os.system('rm -rf '+base+'.vtk'); os.system('rm -rf '+base+'.inp');
       os.system('rm -rf '+base+'-tetgen'); os.system('rm -rf log log2');
-      
-      
+
+
       ## 3. make links
       os.system('ln -sf '+sh_dir+'/src/ptcloudgen/ptcloudgen');
-      os.system('ln -sf '+sh_dir+'/src/ptcloudgen/resample.py');      
+      os.system('ln -sf '+sh_dir+'/src/ptcloudgen/resample.py');
       os.system('ln -sf '+sh_dir+'/src/ptcloudgen/smooth.mlx');
       for name in glob.glob(sh_dir+'/src/surfrecon/misc/*'):
          os.system('ln -sf '+name)
@@ -188,8 +188,8 @@ else:
       os.system('ln -sf '+sh_dir+'/src/surfrecon/voronoi/vorrecon.py')
       os.system('ln -sf '+sh_dir+'/src/surfrecon/voronoi/vsitegen/vsitegen')
       os.system('ln -sf '+sh_dir+'/src/surfrecon/voronoi/qvor2vtk/qvor2vtk')
-      
-      
+
+
       #print options
       print ''
       print 'Input file: ' + infile
@@ -199,30 +199,30 @@ else:
          print '* Point Cloud Generation'
          if (smoothpc == 1):
             print '  - Point cloud smoothing on'
-   
+
       if (xval[1] == '1'):
          print '* Surface Reconstruction'
-         if(surfrecon == 'v'):         
+         if(surfrecon == 'v'):
             print '  - Surface reconstruction method: Voronoi'
             print '  - Site pair distance: ' + str(sitepairdist) + ' voxels'
          elif(surfrecon == 'p'):
             print '  - Surface reconstruction method: Screened Poisson'
          else:
-            sys.exit('ERROR: surface reconstruction method must be \'v\' vor Voronoi or \'p\' for Screneed Poisson') 
+            sys.exit('ERROR: surface reconstruction method must be \'v\' vor Voronoi or \'p\' for Screneed Poisson')
          print '  - Desired surface points: ' + str(numsurfpoints)
-      
+
       if (tflag == 1):
          print '* Tetrahedral Volume Meshing'
          if (lflag == 1):
             print '  - Linear tetrahedra'
-         else:   
+         else:
             print '  - Quadratic tetrahedra'
          print '  - Tetgen options: -' + topt
          if (kflag == 1):
             print '  - Output VTK file'
          if (bflag == 1):
             print '  - Output Abaqus .inp file'
-         
+
       ## 4. generate point cloud
       if(xval[0] == '1'):
          if smoothpc == 0:
@@ -237,22 +237,22 @@ else:
             os.system('python vorrecon.py ' + base + ' ' + str(numsurfpoints) + ' ' + str(sitepairdist) + ' ' + str(verbose) + ' ' + xval[0] + ' ' + str(cspacing) + ' ' + debug)
          else:
             os.system('python poissrecon.py ' + base + ' ' + str(numsurfpoints) + ' ' + str(verbose))
-            
-      
+
+
       if (lflag == 0):
          oopt = 'o2'
          orderopt = '-order 2'
       else:
          oopt = ''
          orderopt = '-order 1'
-         
-         
+
+
       ## 6. tetgen tetrahedral meshing
       if(tflag == 1):
          print "==============================================================================="
          print
          print 'Tetgen tetrahedral meshing'
-         print "-------------------------------------------------------------------------------"      
+         print "-------------------------------------------------------------------------------"
          if (verbose == 1):
             qq = ''
          else:
@@ -262,40 +262,40 @@ else:
          os.system('mv ' + base+'.1.edge ' + base+'.1.ele ' + base+'.1.face ' + base+'.1.node ' + base+'.1.smesh ' + base+'-tetgen')
          sys.stdout.flush()
          print '\rDone. Tetrahedral mesh generated.'
-      
-      
+
+
       if (kflag == 1 or bflag == 1):
          os.system('tetgen -' + qq + topt + 'k' + ' ' + base+'.ply' + '> tmplog 2>&1')
          os.system('rm tmplog ' + base+'.1.edge ' + base+'.1.ele ' + base+'.1.face ' + base+'.1.node ' + base+'.1.smesh ')
          os.system('mv ' + base+'.1.vtk ' + base + '.vtk')
-            
-            
-      ## 7. VTK file generation   
+
+
+      ## 7. VTK file generation
       if (kflag == 1):
          print "==============================================================================="
          print
          print 'Gmsh Output VTK file'
-         print "-------------------------------------------------------------------------------"      
+         print "-------------------------------------------------------------------------------"
          os.system('gmsh ' + base+'.vtk -3 -format vtk '+ orderopt+' -o '+base+'.vtk' + log)
          os.system('rm -rf log')
          print 'VTK mesh file generated.'
-      
-      
-      ## 8. Abaqus input file generation   
+
+
+      ## 8. Abaqus input file generation
       if (bflag == 1):
          print "==============================================================================="
          print
          print 'Gmsh Output Abaqus .inp file'
-         print "-------------------------------------------------------------------------------"            
+         print "-------------------------------------------------------------------------------"
          os.system('gmsh ' + base+'.vtk -3 -format inp '+ orderopt+' -o '+base+'.inp' + log)
          os.system('rm -rf log')
          print 'Abaqus input file generated.'
          if (kflag == 0):
             os.system('rm -rf ' + base+'.vtk')
-      
-      
+
+
       ## 9. remove intermediate files
-      os.system('rm -rf ptcloudgen.py'); os.system('rm -rf connectivity.py'); 
+      os.system('rm -rf ptcloudgen.py'); os.system('rm -rf connectivity.py');
       os.system('rm -rf qvor2vtk'); os.system('rm -rf poissrecon.mlx');
       os.system('rm -rf vorrecon.py'); os.system('rm -rf poissrecon.py');
       os.system('rm -rf smooth.mlx'); os.system('rm -rf reorient.mlx');
@@ -303,17 +303,20 @@ else:
       os.system('rm -rf ptcloudgen'); os.system('rm -rf smooth.mlx');
       os.system('rm -rf clean.py'); os.system('rm -rf taubin.mlx');
       os.system('rm -rf resample.py');
-      
-      
+
+
       if (allfiles == 0):
          os.system('rm -rf '+base+'-resampled.nrrd')
          os.system('rm -rf '+base+'.xyz');
-         os.system('rm -rf '+base+'.vor'); os.system('rm -rf '+base+'-fine.ply');
-         
+         os.system('rm -rf '+base+'.vor');
+         os.system('rm -rf '+base+'-fine.ply');
+         os.system('rm -rf '+base+'-pretaub-fine.ply')
+
+
       if (ext == '.nrrd'):
          os.system('rm -rf ' + base+'-ptcloud.ply');
-      
-      
+
+
       ## 10. close out
       end = time.time()
       elapsed = (end - start)/60.
@@ -323,4 +326,3 @@ else:
       print "TOTAL ELAPSED TIME:", format(elapsed, '.2f'), "minutes"
       print "==============================================================================="
       print ''
-

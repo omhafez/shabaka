@@ -24,11 +24,11 @@ vsitedist = str(sys.argv[3])
 verbose = int(sys.argv[4])
 xval0 = str(sys.argv[5])
 cspacing = str(sys.argv[6])
-if len(sys.argv) == 8: 
+if len(sys.argv) == 8:
    debug = str(sys.argv[7])
 else:
    debug = ''
-   
+
 if (verbose == 1):
    log = ''
    log2 = ''
@@ -87,7 +87,7 @@ if debug == 'debug':
       print "-------------------------------------------------------------------------------"
    print "\rGenerate b-rep (~1 min)"
    if (verbose == 1):
-      print callstr + command   
+      print callstr + command
    if (verbose == 0):
       print '\rworking...',
       sys.stdout.flush()
@@ -96,10 +96,10 @@ else:
    command = "./qvor2vtk " + base
    if (verbose == 1):
       print
-      print "-------------------------------------------------------------------------------"         
+      print "-------------------------------------------------------------------------------"
    print "\rGenerate b-rep (~1 min)"
    if (verbose == 1):
-      print callstr + command   
+      print callstr + command
    if (verbose == 0):
       print '\rworking...',
       sys.stdout.flush()
@@ -110,10 +110,10 @@ else:
 command = "pvpython clean.py " + base+"-fine.vtk " + base+"-fine.ply"
 if (verbose == 1):
    print
-   print "-------------------------------------------------------------------------------"      
+   print "-------------------------------------------------------------------------------"
 print "\rClean (~1 min)"
 if (verbose == 1):
-   print "-------------------------------------------------------------------------------"         
+   print "-------------------------------------------------------------------------------"
    print "Paraview Clean: " + base+"-init.vtk"
    print callstr + command
 if (verbose == 0):
@@ -156,6 +156,9 @@ if (verbose == 1):
    print "Paraview Connectivity: " + base+"-fine.ply"
    print callstr + command
 os.system(command + log2)
+
+os.system("pvpython clean.py " + base+"-fine.ply " + base+"-fine.ply" + log)
+
 command = meshlabserver + " -i " + base+"-fine.ply" + " -o " + base+"-fine.ply"
 if (verbose == 1):
    print
@@ -163,6 +166,8 @@ if (verbose == 1):
    print "Meshlab Convert to Binary: " + base+"-fine.ply"
    print callstr + command
 os.system(command + log2)
+
+os.system('cp ' + base + '-fine.ply ' + base + '-pretaub-fine.ply')
 
 ##Taubin smooth
 # NOTE: NOT NECESSARY BUT GIVES SMOOTHER/MORE AESTHETICALLY PLEASING RESULTS
@@ -228,5 +233,3 @@ if (verbose == 1):
 print "\r-------------------------------------------------------------------------------"
 print "Voronoi-based surface reconstruction complete"
 print "Elapsed time:", format(elapsed, '.2f'), "minutes"
-
-

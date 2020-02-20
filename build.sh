@@ -26,7 +26,6 @@ NOTSUDO="sudo -u $NAME" #RUN AS NORMAL USER
 shabaka_dir=`pwd`;
 rm -rf src/external *.tgz *.exe
 
-
 # ----------------------------------------------------------------------------
 # MAC
 # ----------------------------------------------------------------------------
@@ -35,6 +34,7 @@ if [ $UNAME_S == "Darwin" ]; then
    # SETUP
    $NOTSUDO echo "Updating Homebrew..."
    $NOTSUDO brew update
+   $NOTSUDO brew upgrade
    sudo chmod +t /tmp
    sudo chmod +t /usr/local/Cellar/
    sudo chmod +t ~/Library/Caches/Homebrew/
@@ -66,7 +66,7 @@ if [ $UNAME_S == "Darwin" ]; then
    # ACVD 2.0
    $NOTSUDO git clone https://github.com/valette/ACVD src/external/ACVD
    cd src/external/ACVD
-   $NOTSUDO cmake . -DCMAKE_BUILD_TYPE=Release -DVTK_DIR=/usr/local/Cellar/vtk/8.2.0
+   $NOTSUDO cmake . -DCMAKE_BUILD_TYPE=Release -DVTK_DIR=/usr/local/Cellar/vtk/8.2.0_7
    $NOTSUDO LANG=C sed -i -e 's/vtkstd\/string/vtkStdString/g' VolumeProcessing/vtkOOCMetaImageReader.cxx
    $NOTSUDO LANG=C sed -i -e 's/vtkstd::string/vtkStdString/g' VolumeProcessing/vtkOOCMetaImageReader.cxx
    $NOTSUDO make -j4
