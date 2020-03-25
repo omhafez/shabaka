@@ -262,7 +262,9 @@ elif [ $UNAME_S == "Linux" ]; then
       $NOTSUDO wget "https://github.com/omhafez/shabaka-externals/raw/master/linux/desktop.tgz"
       $NOTSUDO tar -xf desktop.tgz
       sudo mv desktop/*.png /usr/share/icons
+      cd
       sudo mv desktop/*.desktop ~/.local/share/applications
+      cd -
       $NOTSUDO rm -rf desktop desktop.tgz*
 
       echo "------------------------------------------------------------------------------ "
