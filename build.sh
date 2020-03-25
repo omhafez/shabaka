@@ -263,9 +263,7 @@ elif [ $UNAME_S == "Linux" ]; then
       $NOTSUDO tar -xf desktop.tgz
       sudo rm desktop/meshlab*
       sudo mv desktop/*.png /usr/share/icons
-      cd
-      sudo mv $shabaka_dir/desktop/*.desktop .local/share/applications
-      cd -
+      sudo mv $shabaka_dir/desktop/*.desktop /home/$NAME/.local/share/applications
       $NOTSUDO rm -rf desktop desktop.tgz*
 
       echo "------------------------------------------------------------------------------ "
