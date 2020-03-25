@@ -120,7 +120,7 @@ make them the default versions of those applications.
 
 ‣ If you are running Ubuntu 19.10, Seg3D is not a part of the installation,
 but can be built from source from the following link:
-https://github.com/SCIInstitute/Seg3D/releases/tag/v2.3.2
+https://github.com/SCIInstitute/Seg3D/releases/latest
 If you (understandably) don't want to build Seg3D from source, you may use
 Slicer (http://slicer.org) instead, which provides prebuilt executables for
 Linux.

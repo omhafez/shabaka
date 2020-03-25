@@ -249,6 +249,7 @@ elif [ $UNAME_S == "Linux" ]; then
       # sudo apt-get -y install meshlab
       # sudo apt-get -y install snapd
       sudo snap install meshlab
+      sudo ln -sf /snap/bin/meshlab.meshlabserver /snap/bin/meshlabserver
 
       # # SEG3D 2.1.4
       # if [ $MYVERSION == "14.04" ]; then
@@ -261,7 +262,6 @@ elif [ $UNAME_S == "Linux" ]; then
       # ADD DESKTOP FILES
       $NOTSUDO wget "https://github.com/omhafez/shabaka-externals/raw/master/linux/desktop.tgz"
       $NOTSUDO tar -xf desktop.tgz
-      sudo rm desktop/meshlab*
       sudo mv desktop/*.png /usr/share/icons
       sudo mv $shabaka_dir/desktop/*.desktop /home/$NAME/.local/share/applications
       $NOTSUDO rm -rf desktop desktop.tgz*
