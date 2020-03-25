@@ -261,9 +261,10 @@ elif [ $UNAME_S == "Linux" ]; then
       # ADD DESKTOP FILES
       $NOTSUDO wget "https://github.com/omhafez/shabaka-externals/raw/master/linux/desktop.tgz"
       $NOTSUDO tar -xf desktop.tgz
+      sudo rm desktop/meshlab*
       sudo mv desktop/*.png /usr/share/icons
       cd
-      sudo mv desktop/*.desktop .local/share/applications
+      sudo mv $shabaka_dir/desktop/*.desktop .local/share/applications
       cd -
       $NOTSUDO rm -rf desktop desktop.tgz*
 
