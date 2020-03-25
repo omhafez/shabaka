@@ -8,10 +8,10 @@ University of California, Davis
 https://github.com/omhafez/shabaka  
 https://www.linkedin.com/in/omarhafez34  
 omhafez@ucdavis.edu  
-  
+
 ------------------------------------------------------------------------------
 ![alt text](https://raw.githubusercontent.com/omhafez/shabaka-externals/master/shabaka.png "shabaka workflow png")  
-  
+
 ------------------------------------------------------------------------------
 
 **Shabaka** is a command-line tool that reads segmented images and generates
@@ -30,9 +30,9 @@ who ruled in the 8th century BC.
 ## **INSTALLATION**  
 
 Installation requires an internet connection. The code has been tested on Mac OS Mojave
-10.14.5, Ubuntu 14.04.5, Ubuntu 16.04.2, and Windows 10 Creators Update (OS build 15063)
-on 64-bit systems. It is recommended that you upgrade your system appropriately.
-Instructions for updating your Windows system is included below.  
+10.14.5, Ubuntu 19.10, and Windows 10 Creators Update (OS build 15063) on 64-bit systems.
+It is recommended that you upgrade your system appropriately. Instructions for updating
+your Windows system is included below.  
 
 
 ### INSTRUCTIONS FOR MAC *(15 minutes)*
@@ -52,7 +52,7 @@ for more details). Remove Xcode with the call below (followed by your Mac passwo
 sudo rm -rf /Applications/Xcode.app
 ~~~~
 
-‣ Install Homebrew: 
+‣ Install Homebrew:
 ~~~~
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ~~~~
@@ -63,7 +63,7 @@ brew update && brew upgrade
 brew install python@2
 brew install git
 ~~~~
-  
+
 ‣ Assuming you want Shabaka in your home directory, make the following
 calls in the terminal (ignore warnings):  
 ~~~~
@@ -83,14 +83,14 @@ provide to resolve the issue and run                                          `
 sudo ./build.sh                                                               `
 again.  
 
-‣ The build script installs the external applications Meshlab 2016.12, 
+‣ The build script installs the external applications Meshlab 2016.12,
 Paraview 5.3.0, and Seg3D 2.4.4. The calls appending *~/.bash_profile*
 make them the default versions of those applications.  
-  
+
 ‣ Any issues installing will be minor.
 Please email omhafez@ucdavis.edu for help.  
 
-  
+
 ### INSTRUCTIONS FOR UBUNTU *(15 minutes)*
 
 ‣ Open a terminal and make the following call to install git:  
@@ -114,21 +114,21 @@ following calls and try again:
 sudo apt-get -y update && sudo apt-get -y upgrade
 sudo apt-get -y dist-upgrade && sudo apt-get -f install && sudo apt-get -y autoremove
 ~~~~
-‣ The build script installs the external applications Meshlab 2016.12, 
+‣ The build script installs the external applications Meshlab 2016.12,
 Paraview 4.0.1, and Seg3D 2.1.4. The calls appending *~/.bashrc*
 make them the default versions of those applications.
 
-‣ If you are running Ubuntu 16.04, Seg3D is not a part of the installation,
+‣ If you are running Ubuntu 19.10, Seg3D is not a part of the installation,
 but can be built from source from the following link:
 https://github.com/SCIInstitute/Seg3D/releases/tag/v2.3.2
 If you (understandably) don't want to build Seg3D from source, you may use
 Slicer (http://slicer.org) instead, which provides prebuilt executables for
 Linux.
-  
+
 ‣ If you have any issues installing, they are certain to be minor.
 Please email omhafez@ucdavis.edu for help.  
 
-  
+
 ### INSTRUCTIONS FOR WINDOWS *(30 minutes)*
 
 ‣ Click the Start menu and search "About your PC". Ensure that you are running
@@ -136,12 +136,12 @@ Windows 10, Version 1703, OS build 15063 (or newer). If you are not, go to
 the following link to update your version of Windows 10 to the Creators
 Update (allocate an additional 30 minutes for this task):
 https://www.microsoft.com/en-us/software-download/windows10  
-  
+
 ‣ Follow these instructions to get Linux Bash Shell on Windows:  
 https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/  
 Please make the UNIX username and password match that of your native Windows
 account. Ignore the portion of the article that discusses fonts.
-  
+
 ‣ Start the "Bash on Ubuntu on Windows" application. Make the following call:
 ~~~
 sudo rm /etc/hosts
@@ -152,14 +152,14 @@ sudo rm /etc/hosts
 sudo apt-get -y update && sudo apt-get -y upgrade
 sudo apt-get -y dist-upgrade && sudo apt-get -f install && sudo apt-get -y autoremove
 ~~~~
-  
+
 ‣ Make the following call to install git:  
 ~~~~
 sudo apt-get -y install git
 ~~~~
 
 ‣ Let's assume you want Shabaka in your home directory on Windows. A symbolic
-link will be placed in the home directory of the Linux subsystem as well. Make the 
+link will be placed in the home directory of the Linux subsystem as well. Make the
 following calls in the terminal (ignore warnings):  
 ~~~~
 cd /mnt/c/Users/$USER
@@ -170,7 +170,7 @@ echo 'export shabaka_dir='$PWD >> ~/.bashrc
 cat .paths/windowspaths >> ~/.bashrc && source ~/.bashrc
 sudo ./build.sh
 ~~~~
-  
+
 ‣ Finish Windows build with the following steps:
 
 * Open File Explorer by typing Windows + E  
@@ -193,14 +193,14 @@ sudo ./build.sh
 * Right click on Desktop --> New --> Shortcut  
 * Paste the following location:                                               `
   C:\Users\%USERNAME%\shabaka                                                 `
-  
-‣ The build script installs the external applications Meshlab 2016.12 and 
+
+‣ The build script installs the external applications Meshlab 2016.12 and
 Paraview 4.0.1 in the Linux subsystem. The calls appending *~/.bashrc*
 make them the default versions within the subsystem.  
-  
+
 ‣ If you have any issues installing, they are certain to be minor.
 Please email omhafez@ucdavis.edu for help.  
-  
+
 ------------------------------------------------------------------------------
 
 ## **SETUP**  
@@ -216,7 +216,7 @@ and you are ready to begin.
 See *doc/segmentation.pdf* for a full tutorial on how to segment images.  
 
 ##### If your image mask is not in NRRD format:  
-+ Open Seg3D and import your mask into Seg3D and then select 
++ Open Seg3D and import your mask into Seg3D and then select
   File --> Export Segmentation and save as .nrrd  
 + Seg3D provides Python scripting capability in the event that you need to
   convert several images.  
@@ -244,20 +244,20 @@ where *mask.nrrd* is an image segmentation (mask) provided by the user.
       Voronoi-based surface reconstruction), denoted here as YYY. Typically
       not to be changed.  
 * -tZZZ: call tetgen to produce tetrahedral volume mesh from surface generated
-      by Shabaka. The string ZZZ is the set of tetgen options (Refer to 
+      by Shabaka. The string ZZZ is the set of tetgen options (Refer to
       http://wias-berlin.de/software/tetgen). If ZZZ is not specified,
       default tetgen options are -pqY  
 * -k: output tetrahedral volume mesh in VTK format. Requires -t flag to be
       called as well  
 * -b: output tetrahedral volume mesh in Abaqus .inp format. Requires -t flag
       to be called as well  
-* -l: (lowercase L) generate linear tetrahedra (default is quadratic). 
+* -l: (lowercase L) generate linear tetrahedra (default is quadratic).
       Requires -t flag to be called as well  
 * -v: run Shabaka in verbose mode  
 * -a: export all intermediate files  
 * -s: perform smoothing on point cloud (should not typically be necessary)  
 * -p: perform Screened Poisson surface reconstruction instead of default
-      Voronoi-based surface reconstruction *(not available on Ubuntu, 
+      Voronoi-based surface reconstruction *(not available on Ubuntu,
       pending bug fixes in Meshlab)*  
 * -f: overwrite any previously existing Shabaka output files  
 
@@ -272,7 +272,7 @@ Generates 30,000 surface points, uses Voronoi site pair distance of 1.1 voxels,
 and generates quadratic tetrahedra in Tetgen, VTK, and Abaqus formats.
 Tetgen options are -pqY.
 
-#### Other examples: 
+#### Other examples:
 `
 shabaka mask.nrrd
 `  
@@ -280,14 +280,14 @@ shabaka mask.nrrd
 of 1.1 voxels. No tetrahedral meshing, verbose mode off, no intermediate files
 exported, point cloud smoothing off, and Voronoi-based surface reconstruction
 performed.
-  
+
 `
 shabaka mask.nrrd -s -v -l -t -k
 `  
 Generates 30,000 surface points, uses Voronoi site pair distance of 1.1 voxels,
 smooths point cloud, verbose mode on, generates linear tetrahedra in
 Tetgen and VTK formats. Tetgen options are -pqY.
-  
+
 `
 shabaka mask.nrrd -n25000 -p -a -f
 `  
@@ -306,8 +306,8 @@ name ends in "-ptcloud.ply", for example, heart-ptcloud.ply. The additional
 -c flag is required to provide the voxel spacing from the original image. If
 that value is not available, divide the length of your object by about
 250 for a rough estimate.
-  
-  
+
+
 ### WALL CLOCK TIME:
 Surface meshes can be generated for the provided datasets in less than 5
 minutes on a 4 x 2.4 GHz CPU. Images involving complex interfaces or in-plane
@@ -337,7 +337,7 @@ resolutions higher than 256 x 256 pixels may take slightly more time.
 * mask.vor - Voronoi partition output from Qhull  
 * mask-fine.ply - triangulated b-rep prior to surface decimation in PLY
   format  
-  
+
 Results may be inspected in Meshlab and/or Paraview. They can be opened from
 the Start menu, or alternatively, if using Mac or Linux, by opening a terminal
 and typing `meshlab` to open Meshlab and `paraview` to open Paraview.
@@ -351,7 +351,7 @@ and typing `meshlab` to open Meshlab and `paraview` to open Paraview.
 - Shabaka can mesh multiple disjoint objects within a single image, but they
   must belong to the same mask label. Meshing multi-label masks or multiple
   masks at once has not been implemented.
-  
+
 - It is recommended that your image mask has at least 256 voxels in at least
   two directions, i.e., your slice resolution is at least 256 × 256 pixels.
   Generally speaking, more voxels leads to better (and slower) results. Say
@@ -359,7 +359,7 @@ and typing `meshlab` to open Meshlab and `paraview` to open Paraview.
   your image and/or image mask to *Nx* × *Ny* × *Nz*. Simply enter in the
   command line: `  
   unu resample -s x<f1> -x<f2> -x<f3> -i mask.nrrd -o newmask.nrrd          `  
-  where *f1* = *Nx*/*nx*, *f2* = *Ny*/*ny*, and *f3* = *Nz*/*nz*. For 
+  where *f1* = *Nx*/*nx*, *f2* = *Ny*/*ny*, and *f3* = *Nz*/*nz*. For
   example,                                                                  `
   unu resample -s x1.2 -x2.4 -x1.0 -i mask.nrrd -o newmask.nrrd             `  
 
@@ -425,10 +425,10 @@ and typing `meshlab` to open Meshlab and `paraview` to open Paraview.
   Paraview, and tetgen, all of which may come in handy in viewing and using
   the ouput of this code.
 
-- If you are using Windows, the packages Meshlab, Paraview, and Seg3D are 
+- If you are using Windows, the packages Meshlab, Paraview, and Seg3D are
   installed on the *Windows system* in addition to the *Linux subsystem* for
   pre- and post-processing purposes.  
-  
+
 - If you desire an output mesh other than .vtk or .inp, use Gmsh (a part
   of the installation) to convert to a number of other file formats. Gmsh
   can be run through the command line if preferred. Please contact

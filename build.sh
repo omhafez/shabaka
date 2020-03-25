@@ -163,7 +163,7 @@ elif [ $UNAME_S == "Linux" ]; then
    sudo ln -sf /usr/bin/teem-unu /usr/bin/unu
 
    # NLOPT 2.4.1
-   $NOTSUDO cd src/external
+   cd src/external
    $NOTSUDO git clone git://github.com/stevengj/nlopt
    $NOTSUDO cd nlopt
    $NOTSUDO mkdir build
@@ -171,7 +171,7 @@ elif [ $UNAME_S == "Linux" ]; then
    $NOTSUDO cmake ..
    $NOTSUDO make
    sudo make install
-   $NOTSUDO cd -
+   cd $shabaka_dir
 
    # QHULL 2015.2
    $NOTSUDO wget "https://github.com/omhafez/shabaka-externals/raw/master/linux/qhull-2015-src-7.2.0.tgz"
@@ -183,7 +183,7 @@ elif [ $UNAME_S == "Linux" ]; then
    $NOTSUDO git clone https://github.com/valette/ACVD src/external/ACVD
    cd src/external/ACVD
    export LD_LIBRARY_PATH=/usr/local
-   if [ $MYVERSION == "16.04" ] || [ $MYVERSION == "19.10" ]; then
+   if [ $MYVERSION == "18.04" ] || [ $MYVERSION == "19.10" ]; then
       sudo ln -sf /usr/bin/vtk6 /usr/bin/vtk
    fi
    $NOTSUDO cmake . -DCMAKE_BUILD_TYPE=Release
@@ -244,19 +244,19 @@ elif [ $UNAME_S == "Linux" ]; then
       ## UBUNTU
 
       # MESHLAB 2016.12
-      sudo add-apt-repository -y ppa:zarquon42/meshlab
-      sudo apt-get -y update
-      sudo apt-get -y install meshlab
-#       sudo apt-get -y install snapd
-#       sudo snap install meshlab
+      # sudo add-apt-repository -y ppa:zarquon42/meshlab
+      # sudo apt-get -y update
+      # sudo apt-get -y install meshlab
+      # sudo apt-get -y install snapd
+      sudo snap install meshlab
 
-      # SEG3D 2.1.4
-      if [ $MYVERSION == "14.04" ]; then
-         sudo apt-get -y install libinsighttoolkit3.20 libtet1.5
-         $NOTSUDO wget "https://github.com/omhafez/shabaka-externals/raw/master/linux/seg3d_2.1.4-0ubuntu0ppa3_amd64.deb"
-         sudo dpkg -i seg3d_2.1.4-0ubuntu0ppa3_amd64.deb
-         sudo rm seg3d_2.1.4-0ubuntu0ppa3_amd64.deb*
-      fi
+      # # SEG3D 2.1.4
+      # if [ $MYVERSION == "14.04" ]; then
+      #    sudo apt-get -y install libinsighttoolkit3.20 libtet1.5
+      #    $NOTSUDO wget "https://github.com/omhafez/shabaka-externals/raw/master/linux/seg3d_2.1.4-0ubuntu0ppa3_amd64.deb"
+      #    sudo dpkg -i seg3d_2.1.4-0ubuntu0ppa3_amd64.deb
+      #    sudo rm seg3d_2.1.4-0ubuntu0ppa3_amd64.deb*
+      # fi
 
       # ADD DESKTOP FILES
       $NOTSUDO wget "https://github.com/omhafez/shabaka-externals/raw/master/linux/desktop.tgz"
