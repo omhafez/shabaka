@@ -249,9 +249,6 @@ elif [ $UNAME_S == "Linux" ]; then
       # sudo apt-get -y install meshlab
       # sudo apt-get -y install snapd
       sudo snap install meshlab
-      cd /snap/bin
-      sudo ln -sf meshlab.meshlabserver meshlabserver
-      cd -
 
       # # SEG3D 2.1.4
       # if [ $MYVERSION == "14.04" ]; then
