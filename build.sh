@@ -165,9 +165,9 @@ elif [ $UNAME_S == "Linux" ]; then
    # NLOPT 2.4.1
    cd src/external
    $NOTSUDO git clone git://github.com/stevengj/nlopt
-   $NOTSUDO cd nlopt
+   cd nlopt
    $NOTSUDO mkdir build
-   $NOTSUDO cd build
+   cd build
    $NOTSUDO cmake ..
    $NOTSUDO make
    sudo make install
