@@ -24,10 +24,12 @@ verbose = int(sys.argv[3])
 if (verbose == 1):
    log = ''
    log2 = ''
+   log4 = " > log 2>&1"
 else:
    log = " > log"
    log2 = " > log 2>&1"
-   
+   log4 = " > log 2>&1"
+
 meshlabserver = os.environ["mshlbsrvr"]
 
 print ''
@@ -60,15 +62,15 @@ else:
       poissloc = poissloc.replace("/","\\\\")
       command = "/mnt/c/Program\ Files/VCG/MeshLab/meshlabserver.exe -i " + pwd + base+"-ptcloud.ply" + " -o " + pwd + base+"-fine.ply" + " -s " + poissloc
       print command
-  
+
 print "-------------------------------------------------------------------------------"
 print "Meshlab Screened Poisson Surface Reconstruction (~1 min)"
 if (verbose == 1):
-    print callstr + command   
+    print callstr + command
 if (verbose == 0):
     print '\rworking...',
     sys.stdout.flush()
-os.system(command+log2)
+os.system(command+log4)
 
 
 #connectivity
@@ -85,14 +87,14 @@ if (verbose == 1):
    print "-------------------------------------------------------------------------------"
    print "Meshlab Convert to Binary: " + base+"-fine.ply"
    print callstr + command
-os.system(command + log2)
+os.system(command + log4)
 
 
 #ACVD decimation
 command = "ACVD " + base+"-fine.ply "+numpoints+" 0.5 -m 1 -sf 2 -d 0 -of "+base+".ply"
 if (verbose == 1):
    print
-   print "-------------------------------------------------------------------------------"      
+   print "-------------------------------------------------------------------------------"
 print "\rCoarsen (~1 min)"
 if (verbose == 1):
    print callstr + command
@@ -119,7 +121,7 @@ if (verbose == 1):
    print "-------------------------------------------------------------------------------"
    print "Meshlab Export STL: " + base+".ply"
    print callstr + command
-os.system(command + log2)
+os.system(command + log4)
 
 
 #remove intermediate files
@@ -133,4 +135,3 @@ elapsed = (end - start)/60.
 print "\r-------------------------------------------------------------------------------"
 print "Screened Poisson Surface Reconstruction Complete"
 print "Elapsed time:", format(elapsed, '.2f'), "minutes"
-

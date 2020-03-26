@@ -33,10 +33,12 @@ if (verbose == 1):
    log = ''
    log2 = ''
    log3 = " 2>&-"
+   log4 = " > log 2>&1"
 else:
    log = " > log"
    log2 = " > log 2>&1"
    log3 = " > log 2>&1"
+   log4 = " > log 2>&1"
 
 meshlabserver = os.environ["mshlbsrvr"]
 
@@ -141,14 +143,14 @@ if (verbose == 1):
    print "-------------------------------------------------------------------------------"
    print "Meshlab Reorient Faces: " + base+"-init.ply"
    print callstr + command
-os.system(command + log2)
+os.system(command + log4)
 command = meshlabserver + " -i " + base+"-fine.ply" + " -o " + base+"-fine.ply -s reorient.mlx"
 if (verbose == 1):
    print
    print "-------------------------------------------------------------------------------"
    print "Meshlab Reorient Faces: " + base+"-fine.ply"
    print callstr + command
-os.system(command + log2)
+os.system(command + log4)
 command = "pvpython connectivity.py " + base+"-fine.ply " + base+"-fine.ply"
 if (verbose == 1):
    print
@@ -165,7 +167,7 @@ if (verbose == 1):
    print "-------------------------------------------------------------------------------"
    print "Meshlab Convert to Binary: " + base+"-fine.ply"
    print callstr + command
-os.system(command + log2)
+os.system(command + log4)
 
 os.system('cp ' + base + '-fine.ply ' + base + '-pretaub-fine.ply')
 
@@ -214,7 +216,7 @@ if (verbose == 1):
    print "-------------------------------------------------------------------------------"
    print "Meshlab Export STL: " + base+".ply"
    print callstr + command
-os.system(command + log2)
+os.system(command + log4)
 
 
 #remove intermediate files
