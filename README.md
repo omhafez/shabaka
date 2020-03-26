@@ -114,13 +114,12 @@ following calls and try again:
 sudo apt-get -y update && sudo apt-get -y upgrade
 sudo apt-get -y dist-upgrade && sudo apt-get -f install && sudo apt-get -y autoremove
 ~~~~
-‣ The build script installs the external applications Meshlab 2016.12,
-Paraview 4.0.1, and Seg3D 2.1.4. The calls appending *~/.bashrc*
-make them the default versions of those applications.
+‣ The build script installs the external applications Meshlab 2016.12 and
+Paraview 4.0.1. The calls appending *~/.bashrc* make them the default versions
+of those applications.
 
-‣ If you are running Ubuntu 19.10, Seg3D is not a part of the installation,
-but can be built from source from the following link:
-https://github.com/SCIInstitute/Seg3D/releases/latest
+‣ Seg3D is not a part of the installation, but can be built from source from
+the following link: https://github.com/SCIInstitute/Seg3D/releases/latest
 If you (understandably) don't want to build Seg3D from source, you may use
 Slicer (http://slicer.org) instead, which provides prebuilt executables for
 Linux.
