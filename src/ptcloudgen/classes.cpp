@@ -426,7 +426,7 @@ void PtCloud::writePLY(Mask &mask, bool smooth, int verbose)
 
    if(smooth){
       string log2;
-      if (verbose == 1){ log2 = ""; }
+      if (verbose == 1){ log2 = " > log 2>&1"; }
       else{ log2 = " > log 2>&1"; }
 
       if (verbose == 1){
