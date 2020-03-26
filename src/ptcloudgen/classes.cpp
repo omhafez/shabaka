@@ -435,9 +435,9 @@ void PtCloud::writePLY(Mask &mask, bool smooth, int verbose)
       }
       cout << "Smooth point cloud" << endl;
       string meshlabserver(getenv("mshlbsrvr"));
-      string command = meshlabserver + " -i "+mask.name+"-ptcloud.ply -o "+mask.name+"-ptcloud.ply -m vn -s smooth.mlx" + log2;
+      string command = meshlabserver + " -i "+mask.name+"-ptcloud.ply -o "+mask.name+"-ptcloud.ply -m vn -s smooth.mlx";
       if (verbose == 1){
-         string callstr = "CALL: "+command;
+         string callstr = "CALL: "+command+log2;
          cout << callstr << endl;
       }
       int code = system(command.c_str());
