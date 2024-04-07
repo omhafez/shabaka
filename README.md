@@ -66,7 +66,8 @@ echo 'export shabaka_dir='$PWD >> ~/.bash_profile
 cat .paths/macpaths >> ~/.bash_profile && source ~/.bash_profile
 ~~~~
 
-‣ Enter the following call (followed by your Mac password) to run the build script:  
+‣ Enter the following call (followed by your Mac password) to run the build script. Some operations
+may take several minutes or more. Build script is complete when "ALL DONE!" is written to the screen.  
 ~~~~
 sudo ./build.sh
 ~~~~
