@@ -10,19 +10,19 @@ ifeq ($(UNAME_S), Darwin)
 endif
 
 ptcloudgen: $(OBJECTS)
-	$(CC) -Wall -O3 -I /usr/local/include -L /opt/homebrew/lib -o ptcloudgen $(OBJECTS) -lteem -lnlopt -lm -fopenmp
+	$(CC) -Wall -O3 -I /opt/homebrew/include -L /opt/homebrew/lib -o ptcloudgen $(OBJECTS) -lteem -lnlopt -lm -fopenmp
 
 # List header dependencies here in the following manner
 # foo.o bar.o : foo.hh
 
 ptcloudgen.o: ptcloudgen.cpp relerrorfunctional.h classes.h
-	$(CC) -Wall -O3 -I /usr/local/include -L /opt/homebrew/lib -c ptcloudgen.cpp
+	$(CC) -Wall -O3 -I /opt/homebrew/include -L /opt/homebrew/lib -c ptcloudgen.cpp
 
 relerrorfunctional.o: relerrorfunctional.cpp relerrorfunctional.h classes.h
-	$(CC) -Wall -O3 -I /usr/local/include -L /opt/homebrew/lib -c relerrorfunctional.cpp
+	$(CC) -Wall -O3 -I /opt/homebrew/include -L /opt/homebrew/lib -c relerrorfunctional.cpp
 
 classes.o: classes.cpp classes.h relerrorfunctional.h
-	$(CC) -Wunused-result -O3 /usr/local/include -L /opt/homebrew/lib -c classes.cpp -fopenmp
+	$(CC) -Wunused-result -O3 -I /opt/homebrew/include -L /opt/homebrew/lib -c classes.cpp -fopenmp
 
 .PHONY: clean 
 clean:

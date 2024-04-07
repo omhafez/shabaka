@@ -11,13 +11,13 @@ ifeq ($(UNAME_S), Darwin)
 endif
 
 vsitegen: $(OBJECTS)
-	$(CC) -Wall -O3 -I /usr/local/include -L /usr/local/lib -o vsitegen $(OBJECTS) -lteem -lm -fopenmp
+	$(CC) -Wall -O3 -I /opt/homebrew/include -L /opt/homebrew/lib -o vsitegen $(OBJECTS) -lteem -lm -fopenmp
 
 # List header dependencies here in the following manner
 # foo.o bar.o : foo.hh
 
 vsitegen.o: vsitegen.cpp
-	$(CC) -Wall -O3 -I /usr/local/include -L /usr/local/lib -c vsitegen.cpp -fopenmp
+	$(CC) -Wall -O3 -I /opt/homebrew/include -L /opt/homebrew/lib -c vsitegen.cpp -fopenmp
 
 .PHONY: clean 
 clean:
