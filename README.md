@@ -29,8 +29,8 @@ who ruled in the 8th century BC.
 
 ## **INSTALLATION**  
 
-Installation requires an internet connection. The code has been tested on Mac OS Mojave
-10.14.5, Ubuntu 19.10, and Windows 10 Creators Update (OS build 15063) on 64-bit systems.
+Tested on MacOS Sonoma 14.4.1 on M3 Apple Silicon. Previously tested on Ubuntu 19.10
+and Windows 10 Creators Update (OS build 15063) on 64-bit systems, but no guarantee that they still work..
 It is recommended that you upgrade your system appropriately. Instructions for updating
 your Windows system is included below.  
 
