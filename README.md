@@ -29,10 +29,9 @@ who ruled in the 8th century BC.
 
 ## **INSTALLATION**  
 
-Tested on MacOS Sonoma 14.4.1 on M3 Apple Silicon. Previously tested on Ubuntu 19.10
-and Windows 10 Creators Update (OS build 15063) on 64-bit systems, but no guarantee that they still work..
-It is recommended that you upgrade your system appropriately. Instructions for updating
-your Windows system is included below.  
+Tested 4/7/24 on MacOS Sonoma 14.4.1 on M3 Apple Silicon.
+Previously tested on Ubuntu 19.10 and Windows 10 Creators Update (OS build 15063)
+on 64-bit systems, but no guarantee that they still work.
 
 
 ### INSTRUCTIONS FOR MAC *(15 minutes)*

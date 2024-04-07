@@ -39,6 +39,9 @@ if [ $UNAME_S == "Darwin" ]; then
    sudo chmod +t /opt/homebrew/Cellar/
    sudo chmod +t ~/Library/Caches/Homebrew/
 
+   # GDOWN
+   pip install gdown
+
    # GCC 6.3.0
    $NOTSUDO brew reinstall gcc
 
@@ -77,7 +80,7 @@ if [ $UNAME_S == "Darwin" ]; then
       sudo rm -rf /Applications/meshlab-old.app
       sudo mv /Applications/meshlab.app /Applications/meshlab-old.app
    fi
-   $NOTSUDO wget "https://github.com/omhafez/shabaka-externals/tree/main/mac/MeshLab2016.12.dmg"
+   $NOTSUDO gdown 'https://docs.google.com/uc?export=download&id=1TCT-hBaupPh16d3zB5B-5jOVgEN9kG76'
    $NOTSUDO yes | hdiutil attach -nobrowse MeshLab2016.12.dmg > /dev/null
    $NOTSUDO cp -R /Volumes/MeshLab2016.12/meshlab.app/ /Applications/meshlab.app/
    cd /Applications/meshlab.app/Contents/MacOS/
@@ -87,7 +90,7 @@ if [ $UNAME_S == "Darwin" ]; then
    sudo rm -rf MeshLab2016.12.dmg*
 
    # PARAVIEW 5.3.0
-   $NOTSUDO wget "https://github.com/omhafez/shabaka-externals/tree/main/mac/ParaView-5.3.0-Qt5-OpenGL2-MPI-OSX10.8-64bit.dmg"
+   $NOTSUDO gdown 'https://docs.google.com/uc?export=download&id=1j2CNNpZuYV26u_6SB1npNw-Zjb15_FjM'
    $NOTSUDO yes | hdiutil attach ParaView-5.3.0-Qt5-OpenGL2-MPI-OSX10.8-64bit.dmg > /dev/null
    sudo rm -rf /Applications/ParaView-5.3.0.app
    $NOTSUDO cp -R /Volumes/ParaView-5.3.0-Qt5-OpenGL2-MPI-OSX10.8-64bit/ParaView-5.3.0.app/ /Applications/ParaView-5.3.0.app
@@ -95,13 +98,13 @@ if [ $UNAME_S == "Darwin" ]; then
    rm -rf ParaView-5.3.0*
 
    # SEG3D 2.4.4
-   $NOTSUDO wget "https://github.com/SCIInstitute/Seg3D/releases/download/v2.4.4/Seg3D2-2.4.4-Darwin.pkg"
+   $NOTSUDO  gdown 'https://docs.google.com/uc?export=download&id=1rTBnzDQn74qWVlwlh80KtMwPMB4SveTK'
    sudo installer -pkg Seg3D2-2.4.4-Darwin.pkg -target /
    sudo rm -rf Seg3D2-2.4.4-Darwin.pkg
 
    # TETGEN 1.5.0
-   $NOTSUDO wget "https://github.com/omhafez/shabaka-externals/tree/main/mac/tetgen1.5.1.zip" -O src/external/tetgen1.5.1.zip
    cd src/external
+   $NOTSUDO gdown 'https://docs.google.com/uc?export=download&id=1HREApLNN5n4SFZ4z2og_xjVP4Mcs5x-d'
    $NOTSUDO unzip tetgen1.5.1.zip
    $NOTSUDO rm -rf tetgen1.5.1.zip
    $NOTSUDO make -j4 -C tetgen1.5.1
@@ -112,6 +115,8 @@ if [ $UNAME_S == "Darwin" ]; then
 
    # SHABAKA
    export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/libexec:$LD_LIBRARY_PATH
+   export LIBRARY_PATH=/opt/homebrew/lib
+   export CPATH=/opt/homebrew/include
 
    $NOTSUDO make clean -C $shabaka_dir/src/ptcloudgen/
    $NOTSUDO make clean -C $shabaka_dir/src/surfrecon/voronoi/vsitegen/
