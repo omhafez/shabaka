@@ -7,7 +7,7 @@ University of California, Davis
 
 https://github.com/omhafez/shabaka  
 https://www.linkedin.com/in/omarhafez34  
-omhafez@ucdavis.edu  
+omhafez34@gmail.com
 
 ------------------------------------------------------------------------------
 ![alt text](https://raw.githubusercontent.com/omhafez/shabaka-externals/master/shabaka.png "shabaka workflow png")  
@@ -81,7 +81,7 @@ Paraview 5.3.0, and Seg3D 2.4.4. The calls appending *~/.bash_profile*
 make them the default versions of those applications.  
 
 ‣ Any issues installing will be minor.
-Please email omhafez@ucdavis.edu for help.  
+Please email omhafez34@gmail.com for help.  
 
 
 ### INSTRUCTIONS FOR UBUNTU *(15 minutes)*
@@ -118,7 +118,7 @@ Slicer (http://slicer.org) instead, which provides prebuilt executables for
 Linux.
 
 ‣ If you have any issues installing, they are certain to be minor.
-Please email omhafez@ucdavis.edu for help.  
+Please email omhafez34@gmail.com for help.  
 
 
 ### INSTRUCTIONS FOR WINDOWS *(30 minutes)*
@@ -191,7 +191,7 @@ Paraview 4.0.1 in the Linux subsystem. The calls appending *~/.bashrc*
 make them the default versions within the subsystem.  
 
 ‣ If you have any issues installing, they are certain to be minor.
-Please email omhafez@ucdavis.edu for help.  
+Please email omhafez34@gmail.com for help.  
 
 ------------------------------------------------------------------------------
 
@@ -215,7 +215,7 @@ See *doc/segmentation.pdf* for a full tutorial on how to segment images.
 + Slicer (http://slicer.org) and ITK-Snap (http://itksnap.org) can also convert
   raw and/or segmented data to the .nrrd format  
 + Otherwise, there are several command line image converter tools available
-  online. Please contact omhafez@ucdavis.edu with any difficulty in converting
+  online. Please contact omhafez34@gmail.com with any difficulty in converting
   to the .nrrd format.  
 
 ------------------------------------------------------------------------------
@@ -385,12 +385,7 @@ and typing `meshlab` to open Meshlab and `paraview` to open Paraview.
 ### ADDITIONAL COMMENTS  
 
 - A suite of example segmented images have been provided. If you would also
-  like the corresponding raw image data (~1.25 GB), make the following calls:
-   ~~~~
-   wget https://github.com/omhafez/shabaka-examples/releases/download/v1.0/shabaka-examples.tgz
-   tar -xf shabaka-examples.tgz -C $shabaka_dir/reslt
-   rm -rf shabaka-examples.tgz
-   ~~~~
+  like the corresponding raw image data, please contact omhafez34@gmail.com
 
 - If you need to exit the code prematurely, you may need to type ctrl-c
   several times. Alternatively, type ctrl-z or close the terminal.  
@@ -424,7 +419,7 @@ and typing `meshlab` to open Meshlab and `paraview` to open Paraview.
 - If you desire an output mesh other than .vtk or .inp, use Gmsh (a part
   of the installation) to convert to a number of other file formats. Gmsh
   can be run through the command line if preferred. Please contact
-  omhafez@ucdavis.edu if you would like a particular output mesh file
+  omhafez34@gmail.com if you would like a particular output mesh file
   format implemented.  
 
 ------------------------------------------------------------------------------
