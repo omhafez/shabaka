@@ -90,6 +90,13 @@ if (verbose == 1):
 os.system(command + log4)
 
 
+# ##Taubin smooth
+# # NOTE: NOT NECESSARY BUT GIVES SMOOTHER/MORE AESTHETICALLY PLEASING RESULTS
+# command = meshlabserver + " -i " + base+"-fine.ply" + " -o " + base+"-fine.ply -s taubin.mlx"
+# os.system(command + " > log2 2>&1")
+# os.system('rm -rf log2')
+
+
 #ACVD decimation
 command = "ACVD " + base+"-fine.ply "+numpoints+" 0.5 -m 1 -sf 2 -d 0 -of "+base+".ply"
 if (verbose == 1):
@@ -102,6 +109,13 @@ if (verbose == 0):
    print '\rworking...',
    sys.stdout.flush()
 os.system(command + log)
+
+
+# ##Taubin smooth
+# # NOTE: NOT NECESSARY BUT GIVES SMOOTHER/MORE AESTHETICALLY PLEASING RESULTS
+# command = meshlabserver + " -i " + base+".ply" + " -o " + base+".ply -s taubin.mlx"
+# os.system(command + " > log2 2>&1")
+# os.system('rm -rf log2')
 
 
 #connectivity

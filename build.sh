@@ -188,7 +188,7 @@ elif [ $UNAME_S == "Linux" ]; then
    $NOTSUDO git clone https://github.com/valette/ACVD src/external/ACVD
    cd src/external/ACVD
    export LD_LIBRARY_PATH=/usr/local
-   if [$MYVERSION == "16.04"] ||[ $MYVERSION == "18.04" ] || [ $MYVERSION == "19.10" ]; then
+   if [$MYVERSION == "16.04"] || [ $MYVERSION == "18.04" ] || [ $MYVERSION == "19.10" ]; then
       sudo ln -sf /usr/bin/vtk6 /usr/bin/vtk
    fi
    $NOTSUDO cmake . -DCMAKE_BUILD_TYPE=Release
