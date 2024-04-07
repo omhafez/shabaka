@@ -4,5 +4,5 @@ Persistent URL: http://dx.doi.org/10.15147/J2CC7V
 
 ---
 
-CALL: shabaka pelvis.nrrd -s -n50000 -t -b -k
+CALL: shabaka pelvis.nrrd -n50000 -t -b -k
 

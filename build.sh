@@ -36,7 +36,7 @@ if [ $UNAME_S == "Darwin" ]; then
    $NOTSUDO brew update
    $NOTSUDO brew upgrade
    sudo chmod +t /tmp
-   sudo chmod +t /usr/local/Cellar/
+   sudo chmod +t /opt/homebrew/Cellar/
    sudo chmod +t ~/Library/Caches/Homebrew/
 
    # GCC 6.3.0
@@ -51,7 +51,7 @@ if [ $UNAME_S == "Darwin" ]; then
    # CMAKE 3.7.2
    $NOTSUDO brew reinstall cmake
 
-   # VTK 8.2.0
+   # VTK 9.3.0
    $NOTSUDO brew reinstall vtk
 
    # TEEM 1.11.0
@@ -183,7 +183,7 @@ elif [ $UNAME_S == "Linux" ]; then
    $NOTSUDO git clone https://github.com/valette/ACVD src/external/ACVD
    cd src/external/ACVD
    export LD_LIBRARY_PATH=/usr/local
-   if [ $MYVERSION == "18.04" ] || [ $MYVERSION == "19.10" ]; then
+   if [$MYVERSION == "16.04"] ||[ $MYVERSION == "18.04" ] || [ $MYVERSION == "19.10" ]; then
       sudo ln -sf /usr/bin/vtk6 /usr/bin/vtk
    fi
    $NOTSUDO cmake . -DCMAKE_BUILD_TYPE=Release
@@ -250,13 +250,13 @@ elif [ $UNAME_S == "Linux" ]; then
       # sudo apt-get -y install snapd
       sudo snap install meshlab
 
-      # # SEG3D 2.1.4
-      # if [ $MYVERSION == "14.04" ]; then
-      #    sudo apt-get -y install libinsighttoolkit3.20 libtet1.5
-      #    $NOTSUDO wget "https://github.com/omhafez/shabaka-externals/raw/master/linux/seg3d_2.1.4-0ubuntu0ppa3_amd64.deb"
-      #    sudo dpkg -i seg3d_2.1.4-0ubuntu0ppa3_amd64.deb
-      #    sudo rm seg3d_2.1.4-0ubuntu0ppa3_amd64.deb*
-      # fi
+      # SEG3D 2.1.4
+      if [ $MYVERSION == "14.04" ]; then
+         sudo apt-get -y install libinsighttoolkit3.20 libtet1.5
+         $NOTSUDO wget "https://github.com/omhafez/shabaka-externals/raw/master/linux/seg3d_2.1.4-0ubuntu0ppa3_amd64.deb"
+         sudo dpkg -i seg3d_2.1.4-0ubuntu0ppa3_amd64.deb
+         sudo rm seg3d_2.1.4-0ubuntu0ppa3_amd64.deb*
+      fi
 
       # ADD DESKTOP FILES
       $NOTSUDO wget "https://github.com/omhafez/shabaka-externals/raw/master/linux/desktop.tgz"

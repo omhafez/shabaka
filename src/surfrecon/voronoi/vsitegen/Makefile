@@ -7,7 +7,7 @@ ifeq ($(UNAME_S), Linux)
 	CC = g++ -std=c++11
 endif
 ifeq ($(UNAME_S), Darwin)
-	CC = /usr/local/bin/g++-9 -std=c++11
+	CC = /opt/homebrew/bin/g++-13 -std=c++11
 endif
 
 vsitegen: $(OBJECTS)
