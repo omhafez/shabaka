@@ -4,6 +4,8 @@
 export shabaka_dir=$shabaka_dir
 
 export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/libexec:$LD_LIBRARY_PATH
+export LIBRARY_PATH=/opt/homebrew/lib
+export CPATH=/opt/homebrew/include
 export PATH=$shabaka_dir/src/external/ACVD/bin:$PATH  
 export PATH=$shabaka_dir/src/external/tetgen1.5.1:$PATH
 export PATH=/Applications/meshlab.app/Contents/MacOS:$PATH
