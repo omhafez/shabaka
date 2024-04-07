@@ -77,7 +77,7 @@ if [ $UNAME_S == "Darwin" ]; then
       sudo rm -rf /Applications/meshlab-old.app
       sudo mv /Applications/meshlab.app /Applications/meshlab-old.app
    fi
-   $NOTSUDO wget "https://github.com/omhafez/shabaka-externals/raw/master/mac/MeshLab2016.12.dmg"
+   $NOTSUDO wget "https://github.com/omhafez/shabaka-externals/tree/main/mac/MeshLab2016.12.dmg"
    $NOTSUDO yes | hdiutil attach -nobrowse MeshLab2016.12.dmg > /dev/null
    $NOTSUDO cp -R /Volumes/MeshLab2016.12/meshlab.app/ /Applications/meshlab.app/
    cd /Applications/meshlab.app/Contents/MacOS/
@@ -87,7 +87,7 @@ if [ $UNAME_S == "Darwin" ]; then
    sudo rm -rf MeshLab2016.12.dmg*
 
    # PARAVIEW 5.3.0
-   $NOTSUDO wget "https://github.com/omhafez/shabaka-externals/raw/master/mac/ParaView-5.3.0-Qt5-OpenGL2-MPI-OSX10.8-64bit.dmg"
+   $NOTSUDO wget "https://github.com/omhafez/shabaka-externals/tree/main/mac/ParaView-5.3.0-Qt5-OpenGL2-MPI-OSX10.8-64bit.dmg"
    $NOTSUDO yes | hdiutil attach ParaView-5.3.0-Qt5-OpenGL2-MPI-OSX10.8-64bit.dmg > /dev/null
    sudo rm -rf /Applications/ParaView-5.3.0.app
    $NOTSUDO cp -R /Volumes/ParaView-5.3.0-Qt5-OpenGL2-MPI-OSX10.8-64bit/ParaView-5.3.0.app/ /Applications/ParaView-5.3.0.app
@@ -100,7 +100,7 @@ if [ $UNAME_S == "Darwin" ]; then
    sudo rm -rf Seg3D2-2.4.4-Darwin.pkg
 
    # TETGEN 1.5.0
-   $NOTSUDO wget "https://github.com/omhafez/shabaka-externals/raw/master/mac/tetgen1.5.1.zip" -O src/external/tetgen1.5.1.zip
+   $NOTSUDO wget "https://github.com/omhafez/shabaka-externals/tree/main/mac/tetgen1.5.1.zip" -O src/external/tetgen1.5.1.zip
    cd src/external
    $NOTSUDO unzip tetgen1.5.1.zip
    $NOTSUDO rm -rf tetgen1.5.1.zip
@@ -174,7 +174,7 @@ elif [ $UNAME_S == "Linux" ]; then
    cd $shabaka_dir
 
    # QHULL 2015.2
-   $NOTSUDO wget "https://github.com/omhafez/shabaka-externals/raw/master/linux/qhull-2015-src-7.2.0.tgz"
+   $NOTSUDO wget "https://github.com/omhafez/shabaka-externals/tree/main/linux/qhull-2015-src-7.2.0.tgz"
    $NOTSUDO tar -xvf qhull-2015-src-7.2.0.tgz -C src/external
    $NOTSUDO make -C src/external/qhull-2015.2
    $NOTSUDO rm qhull-2015-src-7.2.0.tgz*
@@ -193,7 +193,7 @@ elif [ $UNAME_S == "Linux" ]; then
    cd -
 
    # PARAVIEW 4.0.1
-   $NOTSUDO wget "https://github.com/omhafez/shabaka-externals/raw/master/linux/ParaView-4.0.1-Linux-64bit.tgz"
+   $NOTSUDO wget "https://github.com/omhafez/shabaka-externals/tree/main/linux/ParaView-4.0.1-Linux-64bit.tgz"
    $NOTSUDO tar -xvf ParaView-4.0.1-Linux-64bit.tgz -C src/external
    $NOTSUDO rm ParaView-4.0.1-Linux-64bit.tgz*
 
@@ -201,7 +201,7 @@ elif [ $UNAME_S == "Linux" ]; then
    sudo apt-get -y install tetgen
 
    # GMSH 3.0.1
-   $NOTSUDO wget "https://github.com/omhafez/shabaka-externals/raw/master/linux/gmsh-3.0.1-Linux64.tgz"
+   $NOTSUDO wget "https://github.com/omhafez/shabaka-externals/tree/main/linux/gmsh-3.0.1-Linux64.tgz"
    $NOTSUDO tar -xvf gmsh-3.0.1-Linux64.tgz -C src/external
    $NOTSUDO rm gmsh-3.0.1-Linux64.tgz*
 
@@ -226,10 +226,10 @@ elif [ $UNAME_S == "Linux" ]; then
       sudo apt-get -y install meshlab
 
       # DOWNLOAD WINDOWS EXECUTABLES
-      $NOTSUDO wget "https://github.com/omhafez/shabaka-externals/raw/master/windows/Seg3D2-2.3.2-win64.exe"
-      $NOTSUDO wget "https://github.com/omhafez/shabaka-externals/raw/master/windows/MeshLab2016.12.exe"
-      $NOTSUDO wget "https://github.com/omhafez/shabaka-externals/raw/master/windows/ParaView-5.2.0-Qt4-OpenGL2-Windows-64bit.exe"
-      $NOTSUDO wget "https://github.com/omhafez/shabaka-externals/raw/master/windows/Xming-6-9-0-31-setup.exe"
+      $NOTSUDO wget "https://github.com/omhafez/shabaka-externals/tree/main/windows/Seg3D2-2.3.2-win64.exe"
+      $NOTSUDO wget "https://github.com/omhafez/shabaka-externals/tree/main/windows/MeshLab2016.12.exe"
+      $NOTSUDO wget "https://github.com/omhafez/shabaka-externals/tree/main/windows/ParaView-5.2.0-Qt4-OpenGL2-Windows-64bit.exe"
+      $NOTSUDO wget "https://github.com/omhafez/shabaka-externals/tree/main/windows/Xming-6-9-0-31-setup.exe"
       $NOTSUDO mkdir src/external/windows
       $NOTSUDO mv *.exe src/external/windows
 
@@ -253,13 +253,13 @@ elif [ $UNAME_S == "Linux" ]; then
       # SEG3D 2.1.4
       if [ $MYVERSION == "14.04" ]; then
          sudo apt-get -y install libinsighttoolkit3.20 libtet1.5
-         $NOTSUDO wget "https://github.com/omhafez/shabaka-externals/raw/master/linux/seg3d_2.1.4-0ubuntu0ppa3_amd64.deb"
+         $NOTSUDO wget "https://github.com/omhafez/shabaka-externals/tree/main/linux/seg3d_2.1.4-0ubuntu0ppa3_amd64.deb"
          sudo dpkg -i seg3d_2.1.4-0ubuntu0ppa3_amd64.deb
          sudo rm seg3d_2.1.4-0ubuntu0ppa3_amd64.deb*
       fi
 
       # ADD DESKTOP FILES
-      $NOTSUDO wget "https://github.com/omhafez/shabaka-externals/raw/master/linux/desktop.tgz"
+      $NOTSUDO wget "https://github.com/omhafez/shabaka-externals/tree/main/linux/desktop.tgz"
       $NOTSUDO tar -xf desktop.tgz
       sudo mv desktop/*.png /usr/share/icons
       sudo mv $shabaka_dir/desktop/*.desktop /home/$NAME/.local/share/applications
