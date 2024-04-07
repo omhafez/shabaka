@@ -10,7 +10,7 @@ https://www.linkedin.com/in/omarhafez34
 omhafez34@gmail.com
 
 ------------------------------------------------------------------------------
-![alt text](https://drive.google.com/file/d/1_UQ5GHOMshx1rams2RfuEmkJ9M3RqSKs/view?usp=sharing "shabaka workflow png")  
+![alt text](https://raw.githubusercontent.com/omhafez/shabaka/master/doc/shabaka.png "shabaka workflow png")  
 
 ------------------------------------------------------------------------------
 
