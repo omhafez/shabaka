@@ -45,16 +45,9 @@ xcode-select --install
 If you get an error saying command line tools are already installed, just move
 on to the next step. Otherwise, click Install, then Agree.  
 
-‣ Documented issues with developer tools for MacOS Mojave require you to remove Xcode.app
-during installation (click [here](https://github.com/PointCloudLibrary/pcl/issues/2601#issuecomment-486889884)
-for more details). Remove Xcode with the call below (followed by your Mac password). You may install the app again after installation from the App Store.
-~~~~
-sudo rm -rf /Applications/Xcode.app
-~~~~
-
 ‣ Install Homebrew:
 ~~~~
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ~~~~
 
 ‣ Update packages and install python and git:
