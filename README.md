@@ -164,8 +164,10 @@ sudo ./build.sh
 ‣ Finish Windows build with the following steps:
 
 * Open File Explorer by typing Windows + E  
-* Copy the following into the file path:                                      `
-  C:\Users\%USERNAME%\shabaka\src\external\windows                            `
+* Copy the following into the file path:
+  `
+  C:\Users\%USERNAME%\shabaka\src\external\windows
+  `
 * Install Meshlab, Paraview, and Seg3D as administrator. Install any
   intermediate software that may pop up along the way. Leave default
   installation options as is.  
@@ -174,15 +176,19 @@ sudo ./build.sh
 * **Launch Xming**  
 * Type Windows --> search for Xming --> right click --> Open file location  
 * Copy the Xming shortcut  
-* Open the Run window by typing Windows + R, and run the following:          `
-  shell:common startup                                                       `
+* Open the Run window by typing Windows + R, and run the following:
+  `
+  shell:common startup
+  `
 * Paste the Xming shortcut to this location
 
 ‣ Make a desktop shortcut with the following steps:
 
 * Right click on Desktop --> New --> Shortcut  
-* Paste the following location:                                               `
-  C:\Users\%USERNAME%\shabaka                                                 `
+* Paste the following location:
+  `
+  C:\Users\%USERNAME%\shabaka
+  `
 
 ‣ The build script installs the external applications Meshlab 2016.12 and
 Paraview 4.0.1 in the Linux subsystem. The calls appending *~/.bashrc*
