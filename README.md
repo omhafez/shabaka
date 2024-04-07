@@ -72,9 +72,7 @@ may take several minutes or more. Build script is complete when "ALL DONE!" is w
 sudo ./build.sh
 ~~~~
 If Homebrew gives any installation errors, just follow the instructions they
-provide to resolve the issue and run                                          `
-sudo ./build.sh                                                               `
-again.  
+provide to resolve the issue and run `sudo ./build.sh` again.  
 
 ‣ The build script installs the external applications Meshlab 2016.12,
 Paraview 5.3.0, and Seg3D 2.4.4. The calls appending *~/.bash_profile*
